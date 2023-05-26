@@ -1,0 +1,31 @@
+{
+  "name": "probleme-programare",
+  "version": "1.0.0",
+  "description": "O sa incerc sa adaug toate probleme de programare rezolvate, sau pe care o sa le rezolv, vredata, legate de structuri de date si algoritmi.",
+  "main": "getJsFilesNumber.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "hooks:pre-push": "node ./getJsFilesNumber.js"
+  },
+  "husky": {
+    "pre-push": "npm run hooks:pre-push"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yosoydead/data-structure-and-algorithms-problems.git"
+  },
+  "keywords": [
+    "data",
+    "structures",
+    "algorithms"
+  ],
+  "author": "Radu Bogdan-Mircea",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yosoydead/data-structure-and-algorithms-problems/issues"
+  },
+  "homepage": "https://github.com/yosoydead/data-structure-and-algorithms-problems#readme",
+  "dependencies": {
+    "husky": "^8.0.3"
+  }
+}
