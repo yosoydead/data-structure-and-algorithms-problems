@@ -12,6 +12,8 @@ const generateMarkdownText = (numOfJsFiles) => {
 4. At each push to repo, **a new .md file will be generated** to display the **current amount of JS files**, roughly indicating how many solved problems there are.
 ---
 # Currently, there are **${numOfJsFiles} JS files**, with roughly as many, or more, solved problems.
+---
+# Inca nu merg husky git hooks.
 `;
 };
 
@@ -52,7 +54,6 @@ function execute(command) {
 }
 
 async function main() {
-  console.log("test")
   try {
     const jsFileCount = await execute('find . -mindepth 1 -type f -name "*.js" -printf x | wc -c');
 
@@ -65,6 +66,7 @@ async function main() {
       }
       console.log("The file was saved!");
     });
+    await execute("git add .");
   } catch (error) {
     console.error(error.toString());
   }

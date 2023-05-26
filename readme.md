@@ -6,4 +6,6 @@
 3. Problems will vary in difficulty. They will include the text of the problem. Their parent folder will indicate the source.
 4. At each push to repo, **a new .md file will be generated** to display the **current amount of JS files**, roughly indicating how many solved problems there are.
 ---
-# Currently, there are **75 JS files**, with roughly as many, or more, solved problems.
+# Currently, there are **83 JS files**, with roughly as many, or more, solved problems.
+---
+# Inca nu merg husky git hooks.
