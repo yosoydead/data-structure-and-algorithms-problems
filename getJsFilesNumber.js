@@ -52,6 +52,7 @@ function execute(command) {
 }
 
 async function main() {
+  console.log("test")
   try {
     const jsFileCount = await execute('find . -mindepth 1 -type f -name "*.js" -printf x | wc -c');
 
