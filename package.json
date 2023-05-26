@@ -5,10 +5,10 @@
   "main": "getJsFilesNumber.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "hooks:pre-push": "node ./getJsFilesNumber.js"
+    "hooks:pre-commit": "node ./getJsFilesNumber.js"
   },
   "husky": {
-    "pre-push": "npm run hooks:pre-push"
+    "pre-commit": "npm run hooks:pre-push"
   },
   "repository": {
     "type": "git",
