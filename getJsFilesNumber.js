@@ -44,6 +44,7 @@ function execute(command) {
       }
 
       if (args[2]) {
+        if (args[2].includes("warning")) { resolve(args[1]); }
         reject(args[2]);
 
         return;
