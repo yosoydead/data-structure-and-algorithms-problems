@@ -4,8 +4,8 @@
   "description": "O sa incerc sa adaug toate probleme de programare rezolvate, sau pe care o sa le rezolv, vredata, legate de structuri de date si algoritmi.",
   "main": "getJsFilesNumber.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "post-commit": "node run ./getJsFilesNumber.js"
+    "test": "node ./getJsFilesNumber.js",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -22,7 +22,7 @@
     "url": "https://github.com/yosoydead/data-structure-and-algorithms-problems/issues"
   },
   "homepage": "https://github.com/yosoydead/data-structure-and-algorithms-problems#readme",
-  "dependencies": {
+  "devDependencies": {
     "husky": "^8.0.3"
   }
 }
