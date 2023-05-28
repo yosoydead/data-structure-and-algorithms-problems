@@ -71,31 +71,26 @@ function execute(command) {
   });
 }
 
-function test() {
-  console.log("test");
+function main() {
+  console.log("post commit trigger");
+  try {
+    const jsFileCount = execute('find . -mindepth 1 -type f -name "*.js" -printf x | wc -c');
+
+    console.log(`Am gasit ${jsFileCount} fisiere de JS. O sa scad 1 din cauza scriptului de post commit.`);
+    const text = generateMarkdownText(parseInt(jsFileCount-1));
+
+    fs.writeFile("readme.md", text, (err) => {
+      if (err) {
+        return console.log(err);
+      }
+      console.log("The file was saved!");
+    });
+    execute("git add .");
+    execute("git commit -m 'POST-COMMIT: adaug fisiere ramase. update pe readme.md'");
+  } catch (error) {
+    console.error(error.toString());
+  }
+  
 }
 
-test();
-// function main() {
-//   console.log("post commit trigger");
-//   try {
-//     const jsFileCount = execute('find . -mindepth 1 -type f -name "*.js" -printf x | wc -c');
-
-//     console.log(jsFileCount);
-//     const text = generateMarkdownText(parseInt(jsFileCount));
-
-//     fs.writeFile("readme.md", text, (err) => {
-//       if (err) {
-//         return console.log(err);
-//       }
-//       console.log("The file was saved!");
-//     });
-//     execute("git add .");
-//     execute("git commit -m 'POST-COMMIT: adaug fisiere ramase. update pe readme.md'");
-//   } catch (error) {
-//     console.error(error.toString());
-//   }
-  
-// }
-
-// main();
+main();
