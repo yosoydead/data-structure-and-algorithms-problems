@@ -86,7 +86,7 @@ function main() {
       console.log("The file was saved!");
     });
     execute("git add .");
-    execute("git commit -m 'POST-COMMIT: adaug fisiere ramase. update pe readme.md'");
+    execute('git commit -m "POST-COMMIT: adaug fisiere ramase. update pe readme.md"');
   } catch (error) {
     console.error(error.toString());
   }
