@@ -79,7 +79,7 @@ function main() {
     console.log(`Am gasit ${jsFileCount} fisiere de JS. O sa scad 1 din cauza scriptului de post commit.`);
     const text = generateMarkdownText(parseInt(jsFileCount-1));
 
-    fs.writeFile("readme.md", text, (err) => {
+    fs.writeFileSync("readme.md", text, (err) => {
       if (err) {
         return console.log(err);
       }
