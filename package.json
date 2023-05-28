@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "hooks:pre-commit": "node ./getJsFilesNumber.js",
-    "pre-commit": "node run hooks:pre-push"
+    "pre-commit": "node run ./getJsFilesNumber.js"
   },
   "husky": {
     "pre-commit": "node run hooks:pre-push"
