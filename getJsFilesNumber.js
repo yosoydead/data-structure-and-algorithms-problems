@@ -71,26 +71,31 @@ function execute(command) {
   });
 }
 
-function main() {
-  console.log("post commit trigger");
-  try {
-    const jsFileCount = execute('find . -mindepth 1 -type f -name "*.js" -printf x | wc -c');
-
-    console.log(jsFileCount);
-    const text = generateMarkdownText(parseInt(jsFileCount));
-
-    fs.writeFile("readme.md", text, (err) => {
-      if (err) {
-        return console.log(err);
-      }
-      console.log("The file was saved!");
-    });
-    execute("git add .");
-    execute("git commit -m 'POST-COMMIT: adaug fisiere ramase. update pe readme.md'");
-  } catch (error) {
-    console.error(error.toString());
-  }
-  
+function test() {
+  console.log("test");
 }
 
-main();
+test();
+// function main() {
+//   console.log("post commit trigger");
+//   try {
+//     const jsFileCount = execute('find . -mindepth 1 -type f -name "*.js" -printf x | wc -c');
+
+//     console.log(jsFileCount);
+//     const text = generateMarkdownText(parseInt(jsFileCount));
+
+//     fs.writeFile("readme.md", text, (err) => {
+//       if (err) {
+//         return console.log(err);
+//       }
+//       console.log("The file was saved!");
+//     });
+//     execute("git add .");
+//     execute("git commit -m 'POST-COMMIT: adaug fisiere ramase. update pe readme.md'");
+//   } catch (error) {
+//     console.error(error.toString());
+//   }
+  
+// }
+
+// main();
