@@ -71,24 +71,28 @@ function execute(command) {
   });
 }
 
-function main() {
-  try {
-    const jsFileCount = execute('find . -mindepth 1 -type f -name "*.js" -printf x | wc -c');
-
-    console.log(jsFileCount);
-    const text = generateMarkdownText(parseInt(jsFileCount));
-
-    fs.writeFile("readme.md", text, (err) => {
-      if (err) {
-        return console.log(err);
-      }
-      console.log("The file was saved!");
-    });
-    execute("git add .");
-  } catch (error) {
-    console.error(error.toString());
-  }
-  
+function test() {
+  console.log("test");
 }
+test();
+// function main() {
+//   try {
+//     const jsFileCount = execute('find . -mindepth 1 -type f -name "*.js" -printf x | wc -c');
 
-main();
+//     console.log(jsFileCount);
+//     const text = generateMarkdownText(parseInt(jsFileCount));
+
+//     fs.writeFile("readme.md", text, (err) => {
+//       if (err) {
+//         return console.log(err);
+//       }
+//       console.log("The file was saved!");
+//     });
+//     execute("git add .");
+//   } catch (error) {
+//     console.error(error.toString());
+//   }
+  
+// }
+
+// main();
