@@ -9,7 +9,7 @@
     "pre-commit": "node run hooks:pre-push"
   },
   "husky": {
-    "pre-commit": "npm run hooks:pre-push"
+    "pre-commit": "node run hooks:pre-push"
   },
   "repository": {
     "type": "git",
