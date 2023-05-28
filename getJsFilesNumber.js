@@ -35,7 +35,7 @@ function execute(command) {
      * @param {string|Buffer} standardError The error resulting of the shell command execution
      * @see https://nodejs.org/api/child_process.html#child_process_child_process_exec_command_options_callback
      */
-    childProcess.exec(command, function(error, standardOutput, standardError) {
+    childProcess.execSync(command, function(error, standardOutput, standardError) {
       if (error) {
         reject();
 
