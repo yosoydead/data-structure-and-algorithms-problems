@@ -18,4 +18,30 @@ class Node {
 }
 
 const a = new Node(1, new Node(2, new Node(3, new Node(4))));
-console.log(a);
+
+function print(list) {
+    while (list) {
+        console.log(list.val);
+        list = list.next;
+    }
+}
+
+function invert(pred, curent) {
+    let urm;
+
+    while (curent) {
+        urm = curent.next;
+        curent.next = pred;
+        pred = curent;
+        curent = urm;
+    }
+
+    return pred;
+}
+
+print(a);
+const curent = a.next;
+a.next = null;
+const b = invert(a, curent);
+// invert(a);
+print(b);
