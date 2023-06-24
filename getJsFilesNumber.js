@@ -2,7 +2,20 @@
 const childProcess = require("child_process");
 const fs = require("fs");
 
-const generateMarkdownText = (numOfJsFiles) => {
+const folders = ["HackerRank", "LeetCode", "TudorSorin", "CodeWars"];
+
+const generateExpression = (folderName) => {
+  return `find ./${folderName} -mindepth 1 -type f -name "*.js" -printf x | wc -c`;
+};
+
+const generateDetailedFolders = (arr) => {
+  return `
+Current problems sources:
+${arr.map((el, index) => `${index+1}. ${el.folder}: ${el.number}`).join('\n')}
+`;
+};
+
+const generateMarkdownText = (numOfJsFiles, detailedFolders) => {
   return `
 # **${numOfJsFiles} JS file count**
 ---
@@ -13,10 +26,7 @@ const generateMarkdownText = (numOfJsFiles) => {
 3. Problems will vary in difficulty. They will include the text of the problem. Their parent folder will indicate the source.
 4. At each push to repo, **a new .md file will be generated** to display the **current amount of JS files**, roughly indicating how many solved problems there are.
 ---
-Current problem sources:
-1. LeetCode
-2. Code Wars
-3. High School, grade 10
+${detailedFolders}
 `;
 };
 
@@ -58,14 +68,26 @@ function execute(command) {
   });
 }
 
+/**
+ * Am scapat de a numara FIECARE fisier de JS din root. Inainte era un bug ca imi numara si ce era in node_modules.
+ * Acum numar doar fisierele de JS din folderele cu probleme de programare.
+ */
 async function main() {
   console.log("post commit trigger");
   try {
-    const jsFileCount = await execute('find . -mindepth 1 -type f -name "*.js" -printf x | wc -c');
+    let jsFileCount = 0;
+    const arr = [];
+    for (let i = 0; i < folders.length; i++) {
+      const expression = generateExpression(folders[i]);
+      const num = await execute(expression);
+      jsFileCount += parseInt(num);
+      arr.push({ folder: folders[i], number: parseInt(num) });
+    }
+    const detailedFolders = generateDetailedFolders(arr);
     await execute("git status");
 
     console.log(`Am gasit ${jsFileCount} fisiere de JS. O sa scad 1 din cauza scriptului de post commit.`);
-    const text = generateMarkdownText(parseInt(jsFileCount-1));
+    const text = generateMarkdownText(jsFileCount-1, detailedFolders);
 
     fs.writeFileSync("readme.md", text, (err) => {
       if (err) {
@@ -79,7 +101,6 @@ async function main() {
   } catch (error) {
     console.error(error.toString());
   }
-  
 }
 
 main();
