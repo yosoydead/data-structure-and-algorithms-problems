@@ -1,6 +1,8 @@
 // https://stackoverflow.com/questions/12941083/execute-and-get-the-output-of-a-shell-command-in-node-js
-const childProcess = require("child_process");
-const fs = require("fs");
+// const childProcess = require("child_process");
+// const fs = require("fs");
+import childProcess from "child_process";
+import fs from "fs";
 
 const folders = ["HackerRank", "LeetCode", "TudorSorin", "CodeWars"];
 
