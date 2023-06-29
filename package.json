@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "O sa incerc sa adaug toate probleme de programare rezolvate, sau pe care o sa le rezolv, vredata, legate de structuri de date si algoritmi.",
   "main": "getJsFilesNumber.js",
+  "type": "module",
   "scripts": {
     "test": "node ./getJsFilesNumber.js",
     "prepare": "husky install"
