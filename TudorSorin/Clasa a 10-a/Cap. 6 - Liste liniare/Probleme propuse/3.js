@@ -5,7 +5,7 @@
  * Linia 1: 0 2 8 6
  * Linia 2: 5 9 3 7 1
  */
-const fs = require("fs");
+import fs from "fs";
 
 class Node {
   constructor(val, next) {
