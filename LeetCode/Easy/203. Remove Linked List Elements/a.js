@@ -48,25 +48,27 @@ Acceptance Rate
  * @param {number} val
  * @return {ListNode}
  */
-var removeElements = function(head, val) {
-  if (!head) { return null; }
-  
+var removeElements = function (head, val) {
+  if (!head) {
+    return null;
+  }
+
   while (head && head.val === val) {
-      head = head.next;
+    head = head.next;
   }
 
   let c = head;
   let prev = null;
 
   while (c) {
-      if (c.val === val) {
-          const n = c.next;
-          prev.next = n;
-          c = n;
-          continue;
-      }
-      prev = c;
-      c = c.next;
+    if (c.val === val) {
+      const n = c.next;
+      prev.next = n;
+      c = n;
+      continue;
+    }
+    prev = c;
+    c = c.next;
   }
 
   return head;

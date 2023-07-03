@@ -46,14 +46,13 @@ Acceptance Rate
  * @param {number} k
  * @return {ListNode}
  */
-var swapNodes = function(head, k) {
-
+var swapNodes = function (head, k) {
   let len = 0;
   let c = head;
 
   while (c) {
-      len++;
-      c = c.next;
+    len++;
+    c = c.next;
   }
 
   let first = null;
@@ -62,14 +61,14 @@ var swapNodes = function(head, k) {
   c = head;
 
   while (c) {
-      if (count === k-1) {
-          first = c;
-      }
-      if (count === len - k) {
-          second = c;
-      }
-      count++;
-      c = c.next;
+    if (count === k - 1) {
+      first = c;
+    }
+    if (count === len - k) {
+      second = c;
+    }
+    count++;
+    c = c.next;
   }
 
   const vf = first.val;
