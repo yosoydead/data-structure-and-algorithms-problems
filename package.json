@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "node ./getJsFilesNumber.js",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "format": "npx prettier --write ."
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,7 @@
   },
   "homepage": "https://github.com/yosoydead/data-structure-and-algorithms-problems#readme",
   "devDependencies": {
-    "husky": "^8.0.3"
+    "husky": "^8.0.3",
+    "prettier": "2.8.8"
   }
 }
