@@ -13,13 +13,12 @@ The value of 0! is 1.
 
 You have to create the function factorial that receives n and returns n!. You have to use recursion.
  */
-const factorial = n => {
-  if(n<0){
+const factorial = (n) => {
+  if (n < 0) {
     return 0;
-  }
-  else if(n == 0){
+  } else if (n == 0) {
     return 1;
-  } else{
-    return n * factorial(n-1);
+  } else {
+    return n * factorial(n - 1);
   }
 };

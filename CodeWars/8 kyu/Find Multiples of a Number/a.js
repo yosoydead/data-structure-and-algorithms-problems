@@ -8,10 +8,12 @@ function findMultiples(integer, limit) {
   //your code here
   const arr = [];
   let i = 1;
-  
+
   while (i <= limit) {
-    if (i % integer  === 0) { arr.push (i); }
-    i++
+    if (i % integer === 0) {
+      arr.push(i);
+    }
+    i++;
   }
   return arr;
 }

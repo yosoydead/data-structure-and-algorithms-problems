@@ -39,21 +39,21 @@ The input strings are separated by , instead of \n. The output strings should be
  */
 function vertMirror(strng) {
   // Your code
-  let words = strng.split('\n');
-  
-  for(let i = 0; i < words.length; i++){
+  let words = strng.split("\n");
+
+  for (let i = 0; i < words.length; i++) {
     let w = words[i].split("").reverse().join("");
-    
+
     words[i] = w;
   }
-  
-  return words.join('\n');
+
+  return words.join("\n");
 }
 function horMirror(strng) {
   // Your code
-  let words = strng.split('\n').reverse();
-  
-  return words.join('\n');
+  let words = strng.split("\n").reverse();
+
+  return words.join("\n");
 }
 function oper(fct, s) {
   // Your code

@@ -49,18 +49,20 @@ Explanation
 The original list is . After deleting the node at position , the list is .
  */
 function deleteNode(llist, position) {
-  if (position === 0) { return llist.next; }
+  if (position === 0) {
+    return llist.next;
+  }
   // Write your code here
   let c = llist;
   let prev = null;
   let i = 0;
   while (i < position) {
-      prev = c;
-      c = c.next;
-      i++;
+    prev = c;
+    c = c.next;
+    i++;
   }
-  
+
   prev.next = c.next;
-  
+
   return llist;
 }

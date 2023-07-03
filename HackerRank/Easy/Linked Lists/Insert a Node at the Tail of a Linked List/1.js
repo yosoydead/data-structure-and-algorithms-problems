@@ -40,7 +40,6 @@ After inserting 164, the list is 141 -> 302 -> 164 -> NULL.
 After inserting 530, the list is 141 -> 302 -> 164 -> 530 -> NULL. After inserting 474, the list is 141 -> 302 -> 164 -> 530 -> 474 -> NULL, which is the final list.
  */
 
-
 // Complete the insertNodeAtTail function below.
 
 /*
@@ -53,13 +52,14 @@ After inserting 530, the list is 141 -> 302 -> 164 -> 530 -> NULL. After inserti
  *
  */
 function insertNodeAtTail(head, data) {
-  if (!head) { return new SinglyLinkedListNode(data); }
+  if (!head) {
+    return new SinglyLinkedListNode(data);
+  }
   let c = head;
   while (c.next) {
-      c = c.next;
+    c = c.next;
   }
-  
+
   c.next = new SinglyLinkedListNode(data);
   return head;
 }
-

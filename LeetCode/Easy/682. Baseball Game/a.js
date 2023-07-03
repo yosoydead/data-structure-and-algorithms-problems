@@ -68,39 +68,38 @@ For operations "C" and "D", there will always be at least one previous score on 
  * @param {string[]} operations
  * @return {number}
  */
-var calPoints = function(operations) {
+var calPoints = function (operations) {
   const r = [];
 
   for (let i = 0; i < operations.length; i++) {
-      const x = Number(operations[i]);
+    const x = Number(operations[i]);
 
-      if (isNaN(x)) {
-          switch(operations[i]) {
-              case "C": {
-                  r.pop();
-                  break;
-              }
-              case "D": {
-                  const a = r.pop();
-                  r.push(a, a * 2);
-                  break;
-              }
-              case "+": {
-                  const a = r.pop();
-                  const b = r.pop();
-                  r.push(b, a, a+b);
-              }
-
-          }
-      } else {
-          r.push(x);
+    if (isNaN(x)) {
+      switch (operations[i]) {
+        case "C": {
+          r.pop();
+          break;
+        }
+        case "D": {
+          const a = r.pop();
+          r.push(a, a * 2);
+          break;
+        }
+        case "+": {
+          const a = r.pop();
+          const b = r.pop();
+          r.push(b, a, a + b);
+        }
       }
+    } else {
+      r.push(x);
+    }
   }
 
   let result = 0;
 
   for (let i = 0; i < r.length; i++) {
-      result += r[i];
+    result += r[i];
   }
 
   return result;

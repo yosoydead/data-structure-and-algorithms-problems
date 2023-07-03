@@ -27,14 +27,14 @@ Constraints:
  * @param {number} x
  * @return {number}
  */
-var mySqrt = function(x) {
+var mySqrt = function (x) {
   if (x === 0) return 0;
 
   let n = 1;
 
   while (n * n < x) {
-      n++;
+    n++;
   }
 
-  return n * n > x ? n -1 : n;
+  return n * n > x ? n - 1 : n;
 };

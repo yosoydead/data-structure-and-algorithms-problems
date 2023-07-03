@@ -6,8 +6,10 @@ function cinci(size) {
   let sp = 0;
 
   function push(x) {
-    if (isFull()) { throw new Error("Stack full"); }
-    stack[sp]=  x;
+    if (isFull()) {
+      throw new Error("Stack full");
+    }
+    stack[sp] = x;
     sp++;
   }
 
@@ -34,7 +36,7 @@ function cinci(size) {
   }
 
   for (let i = 0; i < 20; i++) {
-    push(i+1);
+    push(i + 1);
   }
 }
 // five(16);

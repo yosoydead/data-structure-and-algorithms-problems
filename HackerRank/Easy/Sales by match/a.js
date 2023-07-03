@@ -41,21 +41,21 @@ sock.png
 There are three pairs of socks.
  */
 function sockMerchant(n, ar) {
-    // Write your code here
-    const f = {};
-    let pairs = 0;
+  // Write your code here
+  const f = {};
+  let pairs = 0;
 
-    for (let i = 0; i < ar.length; i++) {
-        if (!f[ar[i]]) {
-            f[ar[i]] = 1;
-        } else {
-            f[ar[i]]++;
-            if (f[ar[i]] === 2) {
-                pairs++;
-                f[ar[i]] = 0;
-            }
-        }
+  for (let i = 0; i < ar.length; i++) {
+    if (!f[ar[i]]) {
+      f[ar[i]] = 1;
+    } else {
+      f[ar[i]]++;
+      if (f[ar[i]] === 2) {
+        pairs++;
+        f[ar[i]] = 0;
+      }
     }
-    
-    return pairs;
+  }
+
+  return pairs;
 }

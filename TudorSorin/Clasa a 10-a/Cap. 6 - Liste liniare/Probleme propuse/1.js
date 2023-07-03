@@ -5,10 +5,10 @@
  *    - numele: 20 char
  *    - prenume: 20 char
  *    - un vector de numere reale cu 3 componente care retin notele elevului
- * 
+ *
  * 9. Scrieti un subprogram are afiseaza pe monitor numele, prenumele si media generala a fiecarui elev din lista de mai sus. Functia
  * va primi ca parametru de intrare varful listei.
- * 
+ *
  * 10. Scrieti o functie care returneaza media generala a elevilor care se gasesc in lista.
  */
 class Elev {
@@ -33,7 +33,7 @@ class List {
     this.length = 0;
   }
 
-  push(elev) { 
+  push(elev) {
     const n = new Node(elev);
     if (this.length === 0) {
       this.head = n;
@@ -48,17 +48,17 @@ class List {
 }
 
 const elevi = [
-  new Elev("Radu", "Bogdan", [8,7,9]),
-  new Elev("Ganea", "Alin", [5,5,6]),
-  new Elev("Munteanu", "Mihai", [5,6,7]),
-  new Elev("Nastasa", "Robert", [7,5,8]),
-  new Elev("Danila", "Daniel", [5,5,5]),
+  new Elev("Radu", "Bogdan", [8, 7, 9]),
+  new Elev("Ganea", "Alin", [5, 5, 6]),
+  new Elev("Munteanu", "Mihai", [5, 6, 7]),
+  new Elev("Nastasa", "Robert", [7, 5, 8]),
+  new Elev("Danila", "Daniel", [5, 5, 5]),
 ];
 
 function create() {
   const l = new List();
 
-  elevi.forEach(e => {
+  elevi.forEach((e) => {
     l.push(e);
   });
 
@@ -67,7 +67,7 @@ function create() {
 
 function medie(arr) {
   let t = 0;
-  arr.forEach(n => {
+  arr.forEach((n) => {
     t += n;
   });
 

@@ -32,14 +32,14 @@ Follow up: If this function is called many times, how would you optimize it?
  * @param {number} n - a positive integer
  * @return {number} - a positive integer
  */
-var reverseBits = function(n) {
+var reverseBits = function (n) {
   const a = Array(32).fill(0);
   let index = a.length - 1;
   while (n !== 0) {
-      const r = n % 2;
-      a[index] = r;
-      index--;
-      n = Math.floor(n / 2);
+    const r = n % 2;
+    a[index] = r;
+    index--;
+    n = Math.floor(n / 2);
   }
 
   return Number(`0b${a.reverse().join("")}`);

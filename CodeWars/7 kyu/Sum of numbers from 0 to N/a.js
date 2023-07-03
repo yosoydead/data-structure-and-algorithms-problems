@@ -26,29 +26,28 @@ Output:
 
 0=0
  */
-var SequenceSum = (function() {
+var SequenceSum = (function () {
   function SequenceSum() {}
 
-  SequenceSum.showSequence = function(count) {
+  SequenceSum.showSequence = function (count) {
     // for
-      //while
-      if(count < 0) {
-        return `${count}<0`;
-      }
-      if(count === 0){
-        return `0=0`
-      }
-      
-      let sum = 0;
-      let str = "0";
-      for(let i = 1; i <= count;i++){
-        sum += i;
-        str = `${str}+${i}`;
-      }
-      
-      return `${str} = ${sum}`;
+    //while
+    if (count < 0) {
+      return `${count}<0`;
+    }
+    if (count === 0) {
+      return `0=0`;
+    }
+
+    let sum = 0;
+    let str = "0";
+    for (let i = 1; i <= count; i++) {
+      sum += i;
+      str = `${str}+${i}`;
+    }
+
+    return `${str} = ${sum}`;
   };
 
   return SequenceSum;
-
 })();

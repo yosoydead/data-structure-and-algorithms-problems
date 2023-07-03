@@ -2,13 +2,13 @@
  * First in First out
  * O coada este o lista pentru care toate inserarile sunt facute la unul din capete, iar
  * toate stergerile (consultarile, modificarile) la celalalt capat.
- * 
+ *
  * Alocarea dinamica inlantuita a cozii. O variabila va retine adresa elementului care
  * urmeaza a fi scos (servit). O alta va retine adresa ultimului element introdus in coada.
  * Figura urmatoare prezinta o coada in care primul element care urmeaza a fi scos are
  * adresa in V, iar ultimul introdus are adresa in SF:
  * 7 -> 3 -> 5 -> 2
- * 
+ *
  * V              SF
  */
 class Node {

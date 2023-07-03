@@ -37,10 +37,12 @@ const digits = (n) => {
   const r = [];
 
   while (n > 0) {
-      const d = n % 10;
-      if (d === 0) { return null; }
-      r.push(d);
-      n = Math.floor(n / 10);
+    const d = n % 10;
+    if (d === 0) {
+      return null;
+    }
+    r.push(d);
+    n = Math.floor(n / 10);
   }
 
   return r;
@@ -48,22 +50,26 @@ const digits = (n) => {
 
 const dividing = (n, arr) => {
   for (let i = 0; i < arr.length; i++) {
-      if (n % arr[i] !== 0) { return false; }
+    if (n % arr[i] !== 0) {
+      return false;
+    }
   }
 
   return true;
 };
 
-var selfDividingNumbers = function(left, right) {
+var selfDividingNumbers = function (left, right) {
   const r = [];
 
   for (let i = left; i <= right; i++) {
-      const n = digits(i);
+    const n = digits(i);
 
-      if (n !== null) {
-          const b = dividing(i, n);
-          if (b) { r.push(i); }
+    if (n !== null) {
+      const b = dividing(i, n);
+      if (b) {
+        r.push(i);
       }
+    }
   }
 
   return r;

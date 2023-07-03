@@ -44,12 +44,14 @@ Constraints:
  * @param {Function} fn
  * @return {number[]}
  */
-var filter = function(arr, fn) {
+var filter = function (arr, fn) {
   const res = [];
 
   for (let i = 0; i < arr.length; i++) {
-      const b = fn(arr[i],i);
-      if (b) { res.push (arr[i]); }
+    const b = fn(arr[i], i);
+    if (b) {
+      res.push(arr[i]);
+    }
   }
 
   return res;

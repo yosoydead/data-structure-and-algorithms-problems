@@ -8,14 +8,14 @@ Should return: 11 (the only odd number)
 [160, 3, 1719, 19, 11, 13, -21]
 Should return: 160 (the only even number)
  */
-function findOutlier(integers){
+function findOutlier(integers) {
   //your code here
   let even = 0;
   let evenIndex = 0;
 
   let odd = 0;
   let oddIndex = 0;
-  
+
   for (let i = 0; i < integers.length; i++) {
     if (integers[i] % 2 === 0) {
       even++;
@@ -25,10 +25,10 @@ function findOutlier(integers){
       oddIndex = i;
     }
   }
-  
+
   if (even > odd) {
     return integers[oddIndex];
   }
-  
+
   return integers[evenIndex];
 }

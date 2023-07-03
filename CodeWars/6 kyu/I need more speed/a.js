@@ -13,15 +13,15 @@ function reverse(arr) {
   //code me
   let low = 0;
   let high = arr.length - 1;
-  
-  while(low < high){
+
+  while (low < high) {
     let f = arr[low];
     let l = arr[high];
-//      console.log(`low: ${f}, high: ${l}`);
+    //      console.log(`low: ${f}, high: ${l}`);
 
     arr[low] = l;
     arr[high] = f;
-//      console.log(arr);
+    //      console.log(arr);
 
     low++;
     high--;

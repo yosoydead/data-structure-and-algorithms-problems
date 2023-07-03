@@ -40,22 +40,24 @@ The number of nodes in the list is in the range [1, 100].
  * @param {ListNode} head
  * @return {ListNode}
  */
-var middleNode = function(head) {
-  if (head.next === null) { return head; }
+var middleNode = function (head) {
+  if (head.next === null) {
+    return head;
+  }
 
   let iter = head;
   let count = 0;
-  
+
   while (iter) {
-      count++;
-      iter = iter.next;
+    count++;
+    iter = iter.next;
   }
 
   let i = 0;
-  count % 2 === 0 ? (count = count / 2) + 1 : count = Math.floor(count / 2);
+  count % 2 === 0 ? (count = count / 2) + 1 : (count = Math.floor(count / 2));
   while (i < count) {
-      head = head.next;
-      i++;
+    head = head.next;
+    i++;
   }
   return head;
 };

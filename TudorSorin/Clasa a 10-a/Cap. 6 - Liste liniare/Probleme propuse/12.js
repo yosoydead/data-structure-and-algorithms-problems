@@ -27,7 +27,7 @@ function x() {
   let prevNewHead = null;
   let cur = l.head;
 
-  while(cur) {
+  while (cur) {
     curNewHead.val = cur.val;
     curNewHead.prev = prevNewHead;
     prevNewHead = curNewHead;
@@ -42,7 +42,7 @@ function x() {
   l.tail = prevNewHead;
 
   let c = l.tail;
-  while(c) {
+  while (c) {
     console.log(c.val);
     c = c.prev;
   }

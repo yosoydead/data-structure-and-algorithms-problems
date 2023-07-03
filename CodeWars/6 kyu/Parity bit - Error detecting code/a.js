@@ -27,30 +27,30 @@ This should return:
  */
 function parityBit(binary) {
   // your code here!
-    let lst = binary.split(" ");
-    let result = [];
-    for(let i = 0; i< lst.length; i++){
-      let conversie = verifica(lst[i]);
-      result.push(conversie);
-    }
-  
-    return result.join(' ');
+  let lst = binary.split(" ");
+  let result = [];
+  for (let i = 0; i < lst.length; i++) {
+    let conversie = verifica(lst[i]);
+    result.push(conversie);
   }
-  
-  function verifica(str){
-    let parity = str[str.length-1];
-    let ones = 0;
-  
-    for(let i = 0; i < str.length-1; i++){
-      if(str[i] === '1'){
-        ones++;
-      }
+
+  return result.join(" ");
+}
+
+function verifica(str) {
+  let parity = str[str.length - 1];
+  let ones = 0;
+
+  for (let i = 0; i < str.length - 1; i++) {
+    if (str[i] === "1") {
+      ones++;
     }
-  
-    if(ones % 2 === Number.parseInt(parity)){
-      return str.slice(0, str.length-1);
-    }else{
-      return "error";
-    }
-    // return parity;
   }
+
+  if (ones % 2 === Number.parseInt(parity)) {
+    return str.slice(0, str.length - 1);
+  } else {
+    return "error";
+  }
+  // return parity;
+}

@@ -18,20 +18,22 @@ encryptThis("Hello") === "72olle"
 encryptThis("good") === "103doo"
 encryptThis("hello world") === "104olle 119drlo"
  */
-var encryptThis = function(text) {
+var encryptThis = function (text) {
   // Implement me! :)
-  const arr = text.split(" ").map(el => {
+  const arr = text.split(" ").map((el) => {
     const l = el.charCodeAt(0);
-    if (el.length === 1) { return l; }
-    
+    if (el.length === 1) {
+      return l;
+    }
+
     const str = el.split("");
     str[0] = l;
     const temp = str[1];
     str[1] = str[str.length - 1];
     str[str.length - 1] = temp;
-    
-    return `${str.join("")}`
+
+    return `${str.join("")}`;
   });
-  
+
   return arr.join(" ");
-}
+};

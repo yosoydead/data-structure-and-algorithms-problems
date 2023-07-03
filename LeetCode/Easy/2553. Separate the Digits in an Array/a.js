@@ -42,20 +42,20 @@ const getDigits = (n) => {
   let result = [];
 
   while (n > 0) {
-      result.push(n % 10);
-      n = Math.floor(n / 10);
+    result.push(n % 10);
+    n = Math.floor(n / 10);
   }
 
   return result;
-}
-var separateDigits = function(nums) {
+};
+var separateDigits = function (nums) {
   let result = [];
 
   for (let i = 0; i < nums.length; i++) {
-      const d = getDigits(nums[i]);
-      for (let j = d.length - 1; j >=0; j--) {
-          result.push(d[j]);
-      }
+    const d = getDigits(nums[i]);
+    for (let j = d.length - 1; j >= 0; j--) {
+      result.push(d[j]);
+    }
   }
   return result;
 };

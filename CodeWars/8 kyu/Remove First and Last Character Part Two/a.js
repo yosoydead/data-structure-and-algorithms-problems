@@ -19,7 +19,15 @@ Examples
  */
 function array(s) {
   // TODO
-  const arr = s.split(",")
-  if (arr.length < 3) { return null; }
-  return arr.filter((n, i) => { if (i !== 0 && i !== arr.length - 1) { return n; } }).join(" ")
+  const arr = s.split(",");
+  if (arr.length < 3) {
+    return null;
+  }
+  return arr
+    .filter((n, i) => {
+      if (i !== 0 && i !== arr.length - 1) {
+        return n;
+      }
+    })
+    .join(" ");
 }

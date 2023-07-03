@@ -14,9 +14,9 @@ Examples
  */
 function century(year) {
   // Finish this :)
-//   const c = year/100;
-  
-//   if (c % 10 >= 1) { return parseInt(c) + 1 }
-//   return parseInt(c);
-  return Math.ceil(year/100)
+  //   const c = year/100;
+
+  //   if (c % 10 >= 1) { return parseInt(c) + 1 }
+  //   return parseInt(c);
+  return Math.ceil(year / 100);
 }

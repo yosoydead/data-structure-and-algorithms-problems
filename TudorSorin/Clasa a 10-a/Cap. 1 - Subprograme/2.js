@@ -7,12 +7,15 @@
 function two(arr) {
   const cmmdc = (x, y) => {
     while (x !== y) {
-      if (x > y) { x -= y; }
-      else { y -= x; }
+      if (x > y) {
+        x -= y;
+      } else {
+        y -= x;
+      }
     }
 
     return x;
-  }
+  };
 
   let c = cmmdc(arr[0], arr[1]);
 

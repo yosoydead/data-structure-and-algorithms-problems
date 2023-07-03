@@ -35,13 +35,17 @@ Follow up: Could you solve it without loops/recursion?
  * @param {number} n
  * @return {boolean}
  */
-var isPowerOfFour = function(n) {
-  if (n <= 0) { return false; }
+var isPowerOfFour = function (n) {
+  if (n <= 0) {
+    return false;
+  }
   let pow = 0;
 
   while (Math.pow(4, pow) <= n) {
-      if (Math.pow(4, pow) === n) { return true; }
-      pow++;
+    if (Math.pow(4, pow) === n) {
+      return true;
+    }
+    pow++;
   }
 
   return false;

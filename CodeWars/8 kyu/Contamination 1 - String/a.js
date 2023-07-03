@@ -14,6 +14,9 @@ text before = "abc"
 character   = "z"
 text after  = "zzz"
  */
-function contamination(text, char){
-  return text.split("").map(el => char).join("");
+function contamination(text, char) {
+  return text
+    .split("")
+    .map((el) => char)
+    .join("");
 }

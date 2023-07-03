@@ -46,9 +46,13 @@ Constraints:
  * @param {number} n
  * @return {number[][]}
  */
-var construct2DArray = function(original, m, n) {
-  if (m * n !== original.length) { return []; }
-  const res = Array(m).fill(null).map(() => Array(n));
+var construct2DArray = function (original, m, n) {
+  if (m * n !== original.length) {
+    return [];
+  }
+  const res = Array(m)
+    .fill(null)
+    .map(() => Array(n));
 
   let ri = 0;
   let rj = 0;
@@ -56,9 +60,12 @@ var construct2DArray = function(original, m, n) {
   const maxJ = res[0].length;
 
   for (let i = 0; i < original.length; i++) {
-      res[ri][rj] = original[i];
-      rj++;
-      if (rj === maxJ) { rj = 0; ri++; }
+    res[ri][rj] = original[i];
+    rj++;
+    if (rj === maxJ) {
+      rj = 0;
+      ri++;
+    }
   }
 
   return res;

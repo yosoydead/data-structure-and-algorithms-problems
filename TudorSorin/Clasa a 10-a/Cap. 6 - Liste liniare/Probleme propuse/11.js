@@ -16,7 +16,7 @@ function x() {
   let cur = c;
 
   // nu stiu cum poate fi oprita
-  while(c) {
+  while (c) {
     console.log(c.val);
     c = c.next;
     if (c === cur) {

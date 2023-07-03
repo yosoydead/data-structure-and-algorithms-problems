@@ -34,13 +34,17 @@ Constraints:
  * @param {number} n
  * @return {boolean}
  */
-var isPowerOfThree = function(n) {
-  if (n <= 0) { return false; }
+var isPowerOfThree = function (n) {
+  if (n <= 0) {
+    return false;
+  }
   let pow = 0;
 
   while (Math.pow(3, pow) <= n) {
-      if (Math.pow(3, pow) === n) { return true; }
-      pow++;
+    if (Math.pow(3, pow) === n) {
+      return true;
+    }
+    pow++;
   }
 
   return false;

@@ -40,24 +40,30 @@ n == mat[i].length
  * @param {number} c
  * @return {number[][]}
  */
-var matrixReshape = function(mat, r, c) {
-  if (mat.length * mat[0].length !== r * c) { return mat; }
-      
-      const res = Array(r).fill(null).map(() => Array(c).fill(null));
+var matrixReshape = function (mat, r, c) {
+  if (mat.length * mat[0].length !== r * c) {
+    return mat;
+  }
 
-      let mi = 0;
-      let mj = 0;
+  const res = Array(r)
+    .fill(null)
+    .map(() => Array(c).fill(null));
 
-      const maxj = mat[0].length;
+  let mi = 0;
+  let mj = 0;
 
-      for (let i = 0; i < r; i++) {
-          for (let j = 0; j < c; j++) {
-              res[i][j] = mat[mi][mj];
-              mj++;
-              if (mj === maxj) { mj = 0; mi++; }
-          }
-          
+  const maxj = mat[0].length;
+
+  for (let i = 0; i < r; i++) {
+    for (let j = 0; j < c; j++) {
+      res[i][j] = mat[mi][mj];
+      mj++;
+      if (mj === maxj) {
+        mj = 0;
+        mi++;
       }
+    }
+  }
 
-      return res;
+  return res;
 };

@@ -57,26 +57,19 @@ function getMax(operations) {
     if (ops[0] === "1") {
       stack.push(+ops[1]);
     }
-    if (ops[0] === '2') {
+    if (ops[0] === "2") {
       stack.pop();
     }
-    if (ops[0] === '3') {
+    if (ops[0] === "3") {
       let biggest = -9999999;
       for (let i = 0; i < stack.length; i++) {
-        if (stack[i] > biggest) { biggest = stack[i]; }
+        if (stack[i] > biggest) {
+          biggest = stack[i];
+        }
       }
       b.push(biggest);
     }
   }
   return b;
 }
-getMax(['1 97', '2',
-  '1 20',
-  '2',
-  '1 26',
-  '1 20',
-  '2',
-  '3',
-  '1 91',
-  '3',
-])
+getMax(["1 97", "2", "1 20", "2", "1 26", "1 20", "2", "3", "1 91", "3"]);

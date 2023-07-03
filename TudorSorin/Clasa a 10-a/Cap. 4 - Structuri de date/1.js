@@ -6,14 +6,19 @@
 */
 // stack
 function MannaPnueli(x) {
-  if (x >= 12) { console.log(x - 1); return; }
+  if (x >= 12) {
+    console.log(x - 1);
+    return;
+  }
 
   const stack = [];
   stack.push(x);
   let i = 0;
 
-  function m () {
-    if (stack.length === 0) { return; }
+  function m() {
+    if (stack.length === 0) {
+      return;
+    }
 
     if (stack[i] < 12) {
       stack.push(stack[i] + 2);
@@ -22,7 +27,7 @@ function MannaPnueli(x) {
     } else {
       const a = stack.pop();
       i--;
-      stack[i] = (a-1);
+      stack[i] = a - 1;
       console.log("am putut calcula n", a - 1);
       m();
     }

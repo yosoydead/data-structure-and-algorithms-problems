@@ -8,5 +8,5 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
  */
 function take(arr, n) {
   // Your code here
- return arr.slice(0, n); 
+  return arr.slice(0, n);
 }

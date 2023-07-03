@@ -55,11 +55,11 @@ In the second case, the list is . The element with position of 2 from tail conta
 function getNode(llist, positionFromTail) {
   // Write your code here
   const stack = [];
-  
+
   while (llist) {
-      stack.push(llist.data);
-      llist = llist.next;
+    stack.push(llist.data);
+    llist = llist.next;
   }
-  
+
   return stack[stack.length - positionFromTail - 1];
 }

@@ -69,7 +69,9 @@ class DoublyLinkedList {
       cur = cur.right;
     }
 
-    if (!cur) { return; }
+    if (!cur) {
+      return;
+    }
 
     const l = cur.left;
     const r = cur.right;

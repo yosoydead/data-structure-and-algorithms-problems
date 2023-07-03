@@ -56,25 +56,32 @@ The second linked list is:
 Hence, the merged linked list is: 
  */
 function mergeLists(head1, head2) {
-  if (!head1) { return head2; }
-  if (!head2) { return head1; }
+  if (!head1) {
+    return head2;
+  }
+  if (!head2) {
+    return head1;
+  }
 
   const result = new SinglyLinkedListNode(-1);
   let c = result;
-  while(head1 && head2) {
-       if (head1.data <= head2.data) {
-          c.next = new SinglyLinkedListNode(head1.data);
-          head1 = head1.next;
-
-      } else {
-          c.next = new SinglyLinkedListNode(head2.data);
-          head2 = head2.next;
-      }
-      c = c.next;
+  while (head1 && head2) {
+    if (head1.data <= head2.data) {
+      c.next = new SinglyLinkedListNode(head1.data);
+      head1 = head1.next;
+    } else {
+      c.next = new SinglyLinkedListNode(head2.data);
+      head2 = head2.next;
+    }
+    c = c.next;
   }
-  
-  if (!head1) { c.next = head2; }
-  if (!head2) { c.next = head1; }
+
+  if (!head1) {
+    c.next = head2;
+  }
+  if (!head2) {
+    c.next = head1;
+  }
 
   return result.next;
 }

@@ -29,20 +29,22 @@ Constraints:
  * @param {number[]} nums
  * @return {boolean}
  */
-var containsDuplicate = function(nums) {
+var containsDuplicate = function (nums) {
   const frec = {};
 
   for (let i = 0; i < nums.length; i++) {
-      if (!frec[nums[i]]) {
-          frec[nums[i]] = 1;
-      } else {
-          frec[nums[i]]++;
-      }
+    if (!frec[nums[i]]) {
+      frec[nums[i]] = 1;
+    } else {
+      frec[nums[i]]++;
+    }
   }
   const x = Object.keys(frec);
 
   for (let i = 0; i < x.length; i++) {
-      if (frec[x[i]] > 1) { return true; }
+    if (frec[x[i]] > 1) {
+      return true;
+    }
   }
 
   return false;

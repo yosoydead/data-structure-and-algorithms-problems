@@ -39,14 +39,18 @@ Good luck!
 
 After you complete this kata, you may try yourself at Decode the Morse code, advanced.
  */
-const decodeMorse = function(morseCode){
+const decodeMorse = function (morseCode) {
   // Your code here
   // You can use MORSE_CODE[morse]
-  return morseCode.trim()
+  return morseCode
+    .trim()
     .replaceAll("   ", " S ")
     .split(" ")
-    .map(el => {
-      if (el === 'S') { return " "; }
+    .map((el) => {
+      if (el === "S") {
+        return " ";
+      }
       return MORSE_CODE[el];
-    }).join("");
-}
+    })
+    .join("");
+};

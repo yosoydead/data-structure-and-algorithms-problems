@@ -8,7 +8,7 @@ import fs from "fs";
 import Lista from "../lista.js";
 
 function x() {
-  const data = fs.readFileSync('cifre.txt', 'utf8');
+  const data = fs.readFileSync("cifre.txt", "utf8");
   const l = new Lista();
 
   for (let i = 0; i < data.length; i++) {
@@ -25,7 +25,7 @@ console.log("----------------");
 
 /**
  * 19. Sa se scrie o functie care primeste ca parametru de intrare adresa unei liste liniare simplu inlantuite si
- * are rolul de a inversa nodurile aflate pe prima si ultima pozitie. Functia va returna adresa primului nod al listei. 
+ * are rolul de a inversa nodurile aflate pe prima si ultima pozitie. Functia va returna adresa primului nod al listei.
  */
 function y(l) {
   const head = l.head;

@@ -3,7 +3,7 @@
  * vor memora un numar natural ca o lsita liniara simplu inlantuita.
  * De exemplu, numarul 5610 se va memora sub forma de mai jos:
  * 0 -> 1 -> 6 -> 5
- * 
+ *
  * Scrieti un program care citeste de la tastatura cifrele unui nr natural, incepand cu cifra cea mai semnificativa,
  * si-l memoreaza ca o lista liniara simplu inlantuita.
  */
@@ -12,7 +12,7 @@ import List from "../lista.js";
 function x(nr) {
   const l = new List();
 
-  while(nr > 0) {
+  while (nr > 0) {
     l.push(nr % 10);
     nr = Math.floor(nr / 10);
   }
@@ -31,7 +31,7 @@ const list = x(5610);
 function y(l) {
   let str = "";
 
-  while(l) {
+  while (l) {
     str += l.val;
     l = l.next;
   }

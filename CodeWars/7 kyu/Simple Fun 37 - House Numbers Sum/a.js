@@ -22,13 +22,13 @@ Constraints: 5 ≤ inputArray.length ≤ 50, 0 ≤ inputArray[i] ≤ 10.
 function houseNumbersSum(inputArray) {
   //coding and coding..
   let sum = 0;
-  for(let i = 0; i < inputArray.length;i++){
-    if(inputArray[i] === 0){
+  for (let i = 0; i < inputArray.length; i++) {
+    if (inputArray[i] === 0) {
       return sum;
     }
-    
+
     sum += inputArray[i];
   }
-  
+
   return sum;
 }

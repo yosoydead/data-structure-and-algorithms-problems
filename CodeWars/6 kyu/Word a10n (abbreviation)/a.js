@@ -20,12 +20,12 @@ abbreviate("elephant-rides are really fun!")
 function transform(str) {
   let res = "";
   let count = 1;
-  
-  for(let i = 1; i < str.length - 2; i++) {
+
+  for (let i = 1; i < str.length - 2; i++) {
     count++;
   }
-  res = `${str[0]}${count}${str[str.length-1]}`;
-  
+  res = `${str[0]}${count}${str[str.length - 1]}`;
+
   return res;
 }
 
@@ -62,4 +62,4 @@ function abbreviate(string) {
   return sent;
 }
 
-abbreviate("elephant-ride")
+abbreviate("elephant-ride");

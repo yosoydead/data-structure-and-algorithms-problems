@@ -41,12 +41,12 @@ Each node's value is either 0 or 1.
  * @param {ListNode} head
  * @return {number}
  */
-var getDecimalValue = function(head) {
+var getDecimalValue = function (head) {
   let str = "";
 
   while (head) {
-      str += head.val;
-      head = head.next;
+    str += head.val;
+    head = head.next;
   }
 
   return Number(`0b${str}`);

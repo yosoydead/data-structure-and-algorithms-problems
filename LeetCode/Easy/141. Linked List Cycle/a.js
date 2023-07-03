@@ -53,14 +53,14 @@ Follow up: Can you solve it using O(1) (i.e. constant) memory?
  * @param {ListNode} head
  * @return {boolean}
  */
-var hasCycle = function(head) {
+var hasCycle = function (head) {
   const s = new Set();
   while (head) {
-      if (s.has(head)) {
-          return true;
-      }
-      s.add(head)
-      head = head.next;
+    if (s.has(head)) {
+      return true;
+    }
+    s.add(head);
+    head = head.next;
   }
 
   return false;

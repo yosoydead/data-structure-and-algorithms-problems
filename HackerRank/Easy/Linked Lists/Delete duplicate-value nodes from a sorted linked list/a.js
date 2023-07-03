@@ -51,19 +51,23 @@ The initial linked list is: .
 The final linked list is: .
  */
 function removeDuplicates(llist) {
-  if (!llist.next) { return llist; }
+  if (!llist.next) {
+    return llist;
+  }
   // Write your code here
   let c = llist;
-  
-  while(c) {
-      const next = c.next;
-      if (!next) { break; }
-      if (c.data === next.data) {
-          c.next = next.next;
-          continue;
-      }
-      c = c.next;
+
+  while (c) {
+    const next = c.next;
+    if (!next) {
+      break;
+    }
+    if (c.data === next.data) {
+      c.next = next.next;
+      continue;
+    }
+    c = c.next;
   }
-  
+
   return llist;
 }

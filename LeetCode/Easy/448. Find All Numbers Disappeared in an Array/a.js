@@ -31,16 +31,15 @@ Follow up: Could you do it without extra space and in O(n) runtime? You may assu
  * @param {number[]} nums
  * @return {number[]}
  */
-var findDisappearedNumbers = function(nums) {
+var findDisappearedNumbers = function (nums) {
   const a = Array(nums.length).fill(0);
 
   for (let i = 0; i < nums.length; i++) {
-      a[nums[i] - 1]++;
+    a[nums[i] - 1]++;
   }
 
-  return a.reduce(function(a, e, i) {
-      if (e === 0)
-          a.push(i+1);
-      return a;
+  return a.reduce(function (a, e, i) {
+    if (e === 0) a.push(i + 1);
+    return a;
   }, []);
 };

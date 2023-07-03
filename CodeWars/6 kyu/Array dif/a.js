@@ -10,8 +10,12 @@ If a value is present in b, all of its occurrences must be removed from the othe
 arrayDiff([1,2,2,2,3],[2]) == [1,3]
  */
 function arrayDiff(a, b) {
-  if(a.length === 0) {return []; }
-  if(b.length === 0) { return a; }
+  if (a.length === 0) {
+    return [];
+  }
+  if (b.length === 0) {
+    return a;
+  }
 
   let j = 0;
 
@@ -23,6 +27,6 @@ function arrayDiff(a, b) {
       j++;
     }
   }
-  
+
   return a;
 }

@@ -28,15 +28,20 @@ Output: [1,0]
  * @param {number[]} nums
  * @return {number[]}
  */
-var singleNumber = function(nums) {
+var singleNumber = function (nums) {
   const frec = {};
 
   for (let i = 0; i < nums.length; i++) {
-      if (frec[nums[i]]) { frec[nums[i]]++ }
-      else { frec[nums[i]] = 1; }
+    if (frec[nums[i]]) {
+      frec[nums[i]]++;
+    } else {
+      frec[nums[i]] = 1;
+    }
   }
 
   return Object.keys(frec).filter((a) => {
-      if (frec[a] === 1) { return a; }
+    if (frec[a] === 1) {
+      return a;
+    }
   });
 };

@@ -11,9 +11,9 @@ If two words score the same, return the word that appears earliest in the origin
 
 All letters will be lowercase and all inputs will be valid.
  */
-function high(x){
+function high(x) {
   const m = {};
-  
+
   const arr = x.split(" ");
   let biggest = -10000;
 
@@ -21,17 +21,19 @@ function high(x){
     const x = arr[i];
     let s = 0;
     for (let j = 0; j < x.length; j++) {
-      s += (x.charCodeAt(j) - 96);
+      s += x.charCodeAt(j) - 96;
     }
-    
+
     if (m[s]) {
       m[s].push(x);
     } else {
       m[s] = [x];
     }
-    
-    if (s > biggest) { biggest = s; }
+
+    if (s > biggest) {
+      biggest = s;
+    }
   }
-  
+
   return m[biggest][0];
 }

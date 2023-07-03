@@ -8,8 +8,10 @@ invert([]) == []
 You can assume that all values are integers. Do not mutate the input array/list.
  */
 function invert(array) {
-  if (array.length === 0) { return []; }
-   return array.map((n) => {
-     return n * -1;
-   });
+  if (array.length === 0) {
+    return [];
+  }
+  return array.map((n) => {
+    return n * -1;
+  });
 }

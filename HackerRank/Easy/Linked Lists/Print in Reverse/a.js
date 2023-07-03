@@ -94,11 +94,11 @@ function reversePrint(llist) {
   // Write your code here
   let s = [];
   while (llist) {
-      s.push(llist.data);
-      llist = llist.next;        
+    s.push(llist.data);
+    llist = llist.next;
   }
 
-  s.reverse().forEach(e => {
-      console.log(e);
+  s.reverse().forEach((e) => {
+    console.log(e);
   });
 }

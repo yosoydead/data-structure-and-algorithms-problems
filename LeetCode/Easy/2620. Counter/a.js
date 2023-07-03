@@ -34,18 +34,18 @@ At most 1000 calls to counter() will be made */
  * @param {number} n
  * @return {Function} counter
  */
-var createCounter = function(n) {
+var createCounter = function (n) {
   let x = 0;
-  return function() {
-      const a = n + x;
-      x++;
-      return a;
+  return function () {
+    const a = n + x;
+    x++;
+    return a;
   };
 };
 
-/** 
-* const counter = createCounter(10)
-* counter() // 10
-* counter() // 11
-* counter() // 12
-*/
+/**
+ * const counter = createCounter(10)
+ * counter() // 10
+ * counter() // 11
+ * counter() // 12
+ */

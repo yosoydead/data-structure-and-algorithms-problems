@@ -56,55 +56,61 @@ const swap = (arr, i, j) => {
   const temp = arr[i];
   arr[i] = arr[j];
   arr[j] = temp;
-}
-
-const availableIndex = (nums, from, val) => {
-for (let i = from; i < nums.length; i++) {
-  if (nums[i] !== val) { return i };
-}
-
-return -1;
 };
 
-var removeElement = function(nums, val) {
-  if (nums.length === 1 && nums[0] !== val) { return 1; }
-  if (nums.length === 1 && nums[0] === val) { return 0; }
+const availableIndex = (nums, from, val) => {
+  for (let i = from; i < nums.length; i++) {
+    if (nums[i] !== val) {
+      return i;
+    }
+  }
+
+  return -1;
+};
+
+var removeElement = function (nums, val) {
+  if (nums.length === 1 && nums[0] !== val) {
+    return 1;
+  }
+  if (nums.length === 1 && nums[0] === val) {
+    return 0;
+  }
 
   // variatie de insert sort
   // let i, key, j;
   // let n = 0;
   // for (i = 1; i < nums.length; i++)
-  // { 
-  //     key = nums[i]; 
+  // {
+  //     key = nums[i];
   //     j = i - 1;
   //     // if (nums[i] !== val) {n++;}
 
-  //     /* Move elements of arr[0..i-1], that are 
-  //     greater than key, to one position ahead 
+  //     /* Move elements of arr[0..i-1], that are
+  //     greater than key, to one position ahead
   //     of their current position */
   //     while (j >= 0 && nums[j] === val)
-  //     { 
-  //         nums[j + 1] = nums[j]; 
-  //         j = j - 1; 
-  //     } 
-  //     nums[j + 1] = key; 
+  //     {
+  //         nums[j + 1] = nums[j];
+  //         j = j - 1;
+  //     }
+  //     nums[j + 1] = key;
   // }
 
-  for (let i = 0; i < nums.length-1; i++) {
-      // daca nums[i] === val, trebuie sa gasesc urmatorul index al 
-      // numarului !== val cu care pot sa fac swap
-      if (nums[i] === val) {
-      const index = availableIndex(nums, i+1, val);
+  for (let i = 0; i < nums.length - 1; i++) {
+    // daca nums[i] === val, trebuie sa gasesc urmatorul index al
+    // numarului !== val cu care pot sa fac swap
+    if (nums[i] === val) {
+      const index = availableIndex(nums, i + 1, val);
       if (index > -1) {
-          swap(nums, i, index);
+        swap(nums, i, index);
       }
-      }
+    }
   }
 
   for (let i = 0; i < nums.length; i++) {
-      if (nums[i] === val) {
+    if (nums[i] === val) {
       return i;
-      }
+    }
   }
 
   return nums.length;

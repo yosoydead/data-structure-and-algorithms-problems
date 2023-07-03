@@ -58,20 +58,20 @@ Difference: |4 - 19| = 15
 Note: |x| is the absolute value of x
 */
 function diagonalDifference(arr) {
-    // Write your code here
-    let left = 0;
-    let right = 0;
-    
-    let x = 0;
-    let y = arr[0].length - 1;
+  // Write your code here
+  let left = 0;
+  let right = 0;
 
-    for (let i = 0; i < arr.length; i++) {
-        left += arr[i][x];
-        right += arr[i][y];
-        
-        x++;
-        y--;
-    }
-    
-    return Math.abs(left - right);
+  let x = 0;
+  let y = arr[0].length - 1;
+
+  for (let i = 0; i < arr.length; i++) {
+    left += arr[i][x];
+    right += arr[i][y];
+
+    x++;
+    y--;
+  }
+
+  return Math.abs(left - right);
 }

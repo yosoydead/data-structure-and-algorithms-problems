@@ -13,13 +13,13 @@ function x() {
   // const str = "abcba";
   // const str = "bogdan";
   const str = "abba";
-  str.split("").forEach(e => {
+  str.split("").forEach((e) => {
     l.push(e);
   });
 
   const arr = [];
   let c = l.head;
-  while(c) {
+  while (c) {
     arr.push(c.val);
     c = c.next;
   }

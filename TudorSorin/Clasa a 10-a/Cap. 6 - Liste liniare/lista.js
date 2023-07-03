@@ -12,7 +12,7 @@ class List {
     this.length = 0;
   }
 
-  push(val) { 
+  push(val) {
     const n = new Node(val);
     if (this.length === 0) {
       this.head = n;
@@ -34,7 +34,7 @@ class List {
   print() {
     let c = this.head;
     while (c) {
-      console.log(c.val)
+      console.log(c.val);
       c = c.next;
     }
   }

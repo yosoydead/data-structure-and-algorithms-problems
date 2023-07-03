@@ -36,8 +36,8 @@ There will be at least one word in s.
  * @param {string} s
  * @return {number}
  */
-var lengthOfLastWord = function(s) {
+var lengthOfLastWord = function (s) {
   const a = s.trim().split(" ");
 
-  return a[a.length -1].length;
+  return a[a.length - 1].length;
 };

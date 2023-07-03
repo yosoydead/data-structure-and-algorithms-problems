@@ -38,34 +38,42 @@ const compareLetters = (string, i, j) => {
   let left = string.charCodeAt(i);
   let right = string.charCodeAt(j);
 
-  if (left >= 65 && left < 97) { left += 32; }
-  if (right >= 65 && right < 97) { right += 32; }
+  if (left >= 65 && left < 97) {
+    left += 32;
+  }
+  if (right >= 65 && right < 97) {
+    right += 32;
+  }
   return left === right;
 };
 
-var isPalindrome = function(s) {
-    if (s.length === 0 || s === " ") { return true; }
+var isPalindrome = function (s) {
+  if (s.length === 0 || s === " ") {
+    return true;
+  }
 
-    let i = 0;
-    let j = s.length - 1;
-    const regex = new RegExp(/^[a-zA-Z0-9]$/);
+  let i = 0;
+  let j = s.length - 1;
+  const regex = new RegExp(/^[a-zA-Z0-9]$/);
 
-    while (i < j) {
-        // ignor daca nu e alfanumeric
-        if (!regex.test(s[i])) {
-            i++;
-            continue;
-        }
-        if (!regex.test(s[j])) {
-            j--;
-            continue;
-        }
-
-        const result = compareLetters(s, i, j);
-        if (!result) { return false; }
-        i++;
-        j--;
+  while (i < j) {
+    // ignor daca nu e alfanumeric
+    if (!regex.test(s[i])) {
+      i++;
+      continue;
+    }
+    if (!regex.test(s[j])) {
+      j--;
+      continue;
     }
 
-    return true;
+    const result = compareLetters(s, i, j);
+    if (!result) {
+      return false;
+    }
+    i++;
+    j--;
+  }
+
+  return true;
 };

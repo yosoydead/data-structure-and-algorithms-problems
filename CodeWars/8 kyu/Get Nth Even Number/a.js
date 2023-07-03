@@ -9,6 +9,6 @@ Example(Input --> Output)
 100 --> 198
 1298734 --> 2597466
  */
-function nthEven (n){
-  return (n * 2) - 2;
+function nthEven(n) {
+  return n * 2 - 2;
 }

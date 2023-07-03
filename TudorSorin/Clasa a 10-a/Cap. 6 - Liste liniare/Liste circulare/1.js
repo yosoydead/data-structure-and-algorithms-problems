@@ -38,7 +38,7 @@ class CircularList {
       }
       console.log(node.val);
       loop(node.next);
-    }
+    };
 
     loop(c);
     // while (c) {

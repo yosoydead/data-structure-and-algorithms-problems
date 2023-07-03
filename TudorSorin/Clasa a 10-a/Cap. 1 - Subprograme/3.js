@@ -15,7 +15,9 @@ function three(m, n) {
   for (let i = 0; i < m; i++) {
     const arr = [];
     for (let j = 0; j < nivel; j++) {
-      if (n > 9) { n = 1; }
+      if (n > 9) {
+        n = 1;
+      }
       arr.push(n);
       n++;
     }

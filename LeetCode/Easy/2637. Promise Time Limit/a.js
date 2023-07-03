@@ -70,19 +70,21 @@ fn returns a promise
  * @param {number} t
  * @return {Function}
  */
-var timeLimit = function(fn, t) {
-	return async function(...args) {
-        return new Promise((res, rej)=>{
-            setTimeout(()=>{
-                rej("Time Limit Exceeded");
-            }, t);
-            fn(...args).then((r)=>{
-                res(r)
-            }).catch((e)=>{
-                rej(e)
-            })
-        })  
-    }
+var timeLimit = function (fn, t) {
+  return async function (...args) {
+    return new Promise((res, rej) => {
+      setTimeout(() => {
+        rej("Time Limit Exceeded");
+      }, t);
+      fn(...args)
+        .then((r) => {
+          res(r);
+        })
+        .catch((e) => {
+          rej(e);
+        });
+    });
+  };
 };
 
 /**

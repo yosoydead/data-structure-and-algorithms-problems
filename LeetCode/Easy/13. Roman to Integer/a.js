@@ -49,24 +49,24 @@ It is guaranteed that s is a valid roman numeral in the range [1, 3999].
  * @return {number}
  */
 const years = {
-  "I": 1,
-  "V": 5,
-  "X": 10,
-  "L": 50,
-  "C": 100,
-  "D": 500,
-  "M": 1000,
+  I: 1,
+  V: 5,
+  X: 10,
+  L: 50,
+  C: 100,
+  D: 500,
+  M: 1000,
 };
 
-var romanToInt = function(s) {
+var romanToInt = function (s) {
   let result = 0;
   let i = 0;
   for (; i < s.length - 1; i++) {
-      if (years[s[i]] < years[s[i+1]]) {
-          result -= years[s[i]];
-      } else {
-          result += years[s[i]];
-      }
+    if (years[s[i]] < years[s[i + 1]]) {
+      result -= years[s[i]];
+    } else {
+      result += years[s[i]];
+    }
   }
 
   result += years[s[i]];

@@ -13,5 +13,5 @@ Zero (0) is not checked for any specific sign. Negative zeros make no mathematic
  */
 function makeNegative(num) {
   // Code?
-  return num < 0 ? num : num * -1
+  return num < 0 ? num : num * -1;
 }

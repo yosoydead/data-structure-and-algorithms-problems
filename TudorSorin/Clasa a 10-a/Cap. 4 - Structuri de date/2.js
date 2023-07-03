@@ -10,7 +10,7 @@ function doi(p, n) {
 
   const k = 3;
   for (let i = 0; i < k; i++) {
-    queue.push(i+1);
+    queue.push(i + 1);
   }
 
   queue.push(-1);
@@ -18,12 +18,12 @@ function doi(p, n) {
 
   while (true) {
     if (i !== p - 1) {
-      const x = queue[i-1];
-      const y = queue[i-2];
+      const x = queue[i - 1];
+      const y = queue[i - 2];
       queue[i] = x;
-      queue[i-1] = y;
+      queue[i - 1] = y;
     } else {
-      queue[p-1] = n;
+      queue[p - 1] = n;
       break;
     }
     i--;

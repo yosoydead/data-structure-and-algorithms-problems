@@ -55,33 +55,35 @@ The doubly linked list after insertion is:
  */
 function sortedInsert(llist, data) {
   // Write your code here
-  if (!llist) { return new DoublyLinkedListNode(data); }
+  if (!llist) {
+    return new DoublyLinkedListNode(data);
+  }
 
   let cur = llist;
   let prev = null;
 
   while (cur && cur.data < data) {
-      prev = cur;
-      cur = cur.next;
+    prev = cur;
+    cur = cur.next;
   }
-  
+
   const node = new DoublyLinkedListNode(data);
   if (!prev) {
-      node.next = cur;
-      cur.prev = node;
-      return node;
+    node.next = cur;
+    cur.prev = node;
+    return node;
   }
-  
+
   if (!cur) {
-      node.prev = prev;
-      prev.next = node;
-      return llist;
+    node.prev = prev;
+    prev.next = node;
+    return llist;
   }
 
   node.next = cur;
   node.prev = prev;
   prev.next = node;
   cur.prev = node;
-  
+
   return llist;
 }

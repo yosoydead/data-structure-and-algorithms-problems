@@ -19,7 +19,7 @@
  *   sa se afiseze in ordine descrescatoare a mediilor, in limita a unui
  *   numar de locuri sau pana se epuizeaza toate inregistrarile elevilor
  *   cu medii mai mari sau egale cu 5.
-*/
+ */
 class Elev {
   constructor(nume, dataNasterii, notaMate, notaInfo, notaEngleza) {
     this.nume = nume;
@@ -33,10 +33,12 @@ class Elev {
 }
 
 function validareElev(nume, dataNasterii, notaMate, notaInfo, notaEngleza) {
-  if (nume.length > 30) { throw new Error("nume prea lung"); }
+  if (nume.length > 30) {
+    throw new Error("nume prea lung");
+  }
 
   if (dataNasterii.zi % 1 !== 0 || dataNasterii.luna % 1 !== 0 || dataNasterii.an % 1 !== 0) {
-    throw new Error("zi/luna/an trebuie sa fie numere intregi")
+    throw new Error("zi/luna/an trebuie sa fie numere intregi");
   }
 
   if (isNaN(notaMate) || isNaN(notaInfo) || isNaN(notaEngleza)) {
@@ -47,17 +49,17 @@ function validareElev(nume, dataNasterii, notaMate, notaInfo, notaEngleza) {
 }
 
 const data = [
-  ["Radu Bogdan-Mircea", {zi: 1, luna: 1, an: 1990}, 5, 9, 10 ],
-  ["Munteanu Mihai", {zi: 1, luna: 1, an: 1990}, 6, 5, 10 ],
-  ["Ganea Alin Lucian", {zi: 1, luna: 1, an: 1990}, 5, 5, 10 ],
-  ["Danila Andrei Daniel", {zi: 1, luna: 1, an: 1990}, 5, 7, 10 ],
-  ["Nastasa Robert Alexandru", {zi: 1, luna: 1, an: 1990}, 6, 5, 10 ],
-  ["Manolache Andrei", {zi: 1, luna: 1, an: 1990}, 7, 5, 10 ],
-  ["Agache Teodora", {zi: 1, luna: 1, an: 1990}, 10, 7, 8 ],
-  ["Hagiu Alexandru", {zi: 1, luna: 1, an: 1990}, 5, 5, 7 ],
-  ["Balan Mihai", {zi: 1, luna: 1, an: 1990}, 5, 5, 10 ],
-  ["Mechenici Stefan", {zi: 1, luna: 1, an: 1990}, 10, 10, 10 ],
-  ["Hotoi Silviu", {zi: 1, luna: 1, an: 1990}, 1, 4, 8 ],
+  ["Radu Bogdan-Mircea", { zi: 1, luna: 1, an: 1990 }, 5, 9, 10],
+  ["Munteanu Mihai", { zi: 1, luna: 1, an: 1990 }, 6, 5, 10],
+  ["Ganea Alin Lucian", { zi: 1, luna: 1, an: 1990 }, 5, 5, 10],
+  ["Danila Andrei Daniel", { zi: 1, luna: 1, an: 1990 }, 5, 7, 10],
+  ["Nastasa Robert Alexandru", { zi: 1, luna: 1, an: 1990 }, 6, 5, 10],
+  ["Manolache Andrei", { zi: 1, luna: 1, an: 1990 }, 7, 5, 10],
+  ["Agache Teodora", { zi: 1, luna: 1, an: 1990 }, 10, 7, 8],
+  ["Hagiu Alexandru", { zi: 1, luna: 1, an: 1990 }, 5, 5, 7],
+  ["Balan Mihai", { zi: 1, luna: 1, an: 1990 }, 5, 5, 10],
+  ["Mechenici Stefan", { zi: 1, luna: 1, an: 1990 }, 10, 10, 10],
+  ["Hotoi Silviu", { zi: 1, luna: 1, an: 1990 }, 1, 4, 8],
 ];
 
 const arr = [];
@@ -68,10 +70,10 @@ for (let i = 0; i < data.length; i++) {
 }
 
 function compareName(a, b) {
-  if ( a.nume < b.nume ){
+  if (a.nume < b.nume) {
     return -1;
   }
-  if ( a.nume > b.nume ){
+  if (a.nume > b.nume) {
     return 1;
   }
   return 0;
@@ -83,7 +85,7 @@ function compareName(a, b) {
 // const three = [...arr].sort((a,b) => b.medie - a.medie);
 // console.log(three);
 function four(locuri) {
-  const a = [...arr].sort((a,b) => b.medie - a.medie);
+  const a = [...arr].sort((a, b) => b.medie - a.medie);
   if (!locuri || locuri > a.length) {
     for (let i = 0; i < a.length; i++) {
       if (a[i].medie >= 5) {
@@ -108,6 +110,3 @@ four(3);
 // validareElev("Radu Bogdan Mircea", { zi: 19, luna: 11, an: 1993}, 5,5,5);
 // validareElev("Radu Bogdan Mirceajhfdksjfhdlksjhgdlkjghdlskjghfdskjghld", { zi: 19, luna: 11, an: 1993}, 5,5,5);
 // validareElev("Radu Bogdan Mircea", { zi: 19, luna: 11, an: 1993}, "5n",5,5);
-
-
-

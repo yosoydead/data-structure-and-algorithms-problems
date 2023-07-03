@@ -31,7 +31,7 @@ function x() {
   while (c1) {
     // console.log("inmultesc", c1.val, c2.val, c1.val * c2.val);
     // console.log(`val1 ${c1.val} * val2 ${c2.val} = ${c1.val * c2.val}`);
-    const res = (c1.val * c2.val) + r;
+    const res = c1.val * c2.val + r;
     const digit = res % 10;
 
     if (firstRun) {
@@ -42,13 +42,13 @@ function x() {
       if (c3) {
         const newSum = c3.val + res;
         const d = newSum % 10;
-        r =  Math.floor(newSum / 10);
+        r = Math.floor(newSum / 10);
         c3.val = d;
         c3 = c3.next;
       } else {
         const newSum = res;
         const d = newSum % 10;
-        r =  Math.floor(newSum / 10);
+        r = Math.floor(newSum / 10);
         l3.push(d);
       }
     }
@@ -58,14 +58,16 @@ function x() {
       c1 = c1.next;
       firstRun = false;
 
-      if (r > 0) { l3.push(r); r = 0; }
+      if (r > 0) {
+        l3.push(r);
+        r = 0;
+      }
       head3 = head3.next;
       c3 = head3;
     } else {
       c2 = c2.next;
     }
 
-    
     // c2 = c2.next;
     // if (c1 !== l1.head) {
     //   console.log("inmultesc", c1.val, c2.val, c1.val * c2.val);

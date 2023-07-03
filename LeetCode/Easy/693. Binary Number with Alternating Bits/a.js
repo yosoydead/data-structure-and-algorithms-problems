@@ -33,13 +33,15 @@ Constraints:
  * @param {number} n
  * @return {boolean}
  */
-var hasAlternatingBits = function(n) {
+var hasAlternatingBits = function (n) {
   let last;
   while (n > 0) {
-      const d = n % 2;
-      if (last === d) { return false; }
-      last = d;
-      n = Math.floor(n / 2);
+    const d = n % 2;
+    if (last === d) {
+      return false;
+    }
+    last = d;
+    n = Math.floor(n / 2);
   }
 
   return true;

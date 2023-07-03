@@ -36,36 +36,46 @@ s consists of parentheses only '()[]{}'.
 
 const isPair = (s1, s2) => {
   if (s1 === "(" && s2 === ")") {
-      return true;
+    return true;
   } else if (s1 === "[" && s2 === "]") {
-      return true;
+    return true;
   } else if (s1 === "{" && s2 === "}") {
-      return true;
+    return true;
   }
   return false;
-}
+};
 
 const open = ["(", "[", "{"];
 const close = [")", "]", "}"];
 
-var isValid = function(s) {
-  if (s.length === 1) { return false; }
+var isValid = function (s) {
+  if (s.length === 1) {
+    return false;
+  }
   const stack = [];
 
   for (let i = 0; i < s.length; i++) {
-      if (open.includes(s[i])) { stack.push(s[i]); }
+    if (open.includes(s[i])) {
+      stack.push(s[i]);
+    }
 
-      if (close.includes(s[i])) {
-          const r = stack.pop();
+    if (close.includes(s[i])) {
+      const r = stack.pop();
 
-          // nu am ce element sa dau pop, adica undefined, adica invalid
-          if (!r) { return false; }
-          const check = isPair(r, s[i]);
-
-          if (!check) { return false; }
+      // nu am ce element sa dau pop, adica undefined, adica invalid
+      if (!r) {
+        return false;
       }
+      const check = isPair(r, s[i]);
+
+      if (!check) {
+        return false;
+      }
+    }
   }
 
-  if (stack.length !== 0) { return false; }
+  if (stack.length !== 0) {
+    return false;
+  }
   return true;
 };

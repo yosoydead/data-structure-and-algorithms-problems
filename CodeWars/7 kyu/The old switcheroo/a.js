@@ -11,16 +11,18 @@ vowel2index('') == ''
 Your function should be case insensitive to the vowels.
  */
 function vowel2index(str) {
-  if (str === "") { return ""; }
-   //code me
-  const v = ['a', 'e', 'i', 'o', 'u'];
-  const s = str.split('');
+  if (str === "") {
+    return "";
+  }
+  //code me
+  const v = ["a", "e", "i", "o", "u"];
+  const s = str.split("");
   for (let i = 0; i < s.length; i++) {
     const index = v.indexOf(s[i].toLowerCase());
     if (index > -1) {
-      s[i] = i+1;
+      s[i] = i + 1;
     }
   }
-  
+
   return s.join("");
 }

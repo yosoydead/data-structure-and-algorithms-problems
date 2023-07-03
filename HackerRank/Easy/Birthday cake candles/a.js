@@ -35,19 +35,21 @@ Explanation 0
 Candle heights are . The tallest candles are  units, and there are  of them.
  */
 function birthdayCakeCandles(candles) {
-    // Write your code here
-    let biggest = -100;
-    const f = {};
-    
-    for (let i = 0; i < candles.length; i++) {
-        if (!f[candles[i]]) {
-            f[candles[i]] = 1;
-        } else {
-            f[candles[i]]++;
-        }
-        
-        if (candles[i] > biggest) { biggest = candles[i]; }
+  // Write your code here
+  let biggest = -100;
+  const f = {};
+
+  for (let i = 0; i < candles.length; i++) {
+    if (!f[candles[i]]) {
+      f[candles[i]] = 1;
+    } else {
+      f[candles[i]]++;
     }
-    
-    return f[biggest];
+
+    if (candles[i] > biggest) {
+      biggest = candles[i];
+    }
+  }
+
+  return f[biggest];
 }

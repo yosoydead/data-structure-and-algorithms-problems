@@ -48,50 +48,54 @@ const addDigits = (a, b) => {
   const total = a + b;
   const digit = total % 10;
   return {
-      digit,
-      rest: Math.floor(total / 10), 
+    digit,
+    rest: Math.floor(total / 10),
   };
 };
-var addTwoNumbers = function(l1, l2) {
+var addTwoNumbers = function (l1, l2) {
   const res = new ListNode(0);
   let head = res;
   let tail = null;
   let remainder = 0;
 
   while (l1 || l2) {
-      if (l1 && !l2) {
-          const a = addDigits(l1.val, remainder);
-          remainder = a.rest;
-          head.val = a.digit;
-          l1 = l1.next;
-      }
+    if (l1 && !l2) {
+      const a = addDigits(l1.val, remainder);
+      remainder = a.rest;
+      head.val = a.digit;
+      l1 = l1.next;
+    }
 
-      if (!l1 && l2) {
-          const a = addDigits(l2.val, remainder);
-          remainder = a.rest;
+    if (!l1 && l2) {
+      const a = addDigits(l2.val, remainder);
+      remainder = a.rest;
 
-          head.val = a.digit;
-          l2 = l2.next;
-      }
+      head.val = a.digit;
+      l2 = l2.next;
+    }
 
-      if (l1 && l2) {
-          const a = addDigits(l1.val, l2.val);
-          const t = addDigits(remainder, a.digit);
-          remainder = a.rest;
-          remainder += t.rest;
+    if (l1 && l2) {
+      const a = addDigits(l1.val, l2.val);
+      const t = addDigits(remainder, a.digit);
+      remainder = a.rest;
+      remainder += t.rest;
 
-          head.val = t.digit;
+      head.val = t.digit;
 
-          l1 = l1.next;
-          l2 = l2.next;
-      }
-      tail = head;
-      head.next = new ListNode();
-      head = head.next;
+      l1 = l1.next;
+      l2 = l2.next;
+    }
+    tail = head;
+    head.next = new ListNode();
+    head = head.next;
   }
 
-  if (remainder > 0) { head.val = remainder }
-  if (tail.next.val === 0) { tail.next = null; }
+  if (remainder > 0) {
+    head.val = remainder;
+  }
+  if (tail.next.val === 0) {
+    tail.next = null;
+  }
 
   return res;
 };

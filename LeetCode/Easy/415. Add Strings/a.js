@@ -40,51 +40,50 @@ const addDigits = (a, b) => {
   const total = a + b;
   const digit = total % 10;
   return {
-      digit,
-      rest: Math.floor(total / 10), 
+    digit,
+    rest: Math.floor(total / 10),
   };
 };
 
-var addStrings = function(num1, num2) {
+var addStrings = function (num1, num2) {
   let i = num1.length - 1;
   let j = num2.length - 1;
   let r = [];
   let restToAdd = 0;
 
   while (i >= 0 || j >= 0) {
-      const d1 = num1[i];
-      const d2 = num2[j];
+    const d1 = num1[i];
+    const d2 = num2[j];
 
-      if (d1 && d2) {
-          const a = addDigits(+d1, +d2);
-          const t = addDigits(restToAdd, a.digit);
+    if (d1 && d2) {
+      const a = addDigits(+d1, +d2);
+      const t = addDigits(restToAdd, a.digit);
 
-          // const b = addDigits(a.digit, restToAdd);
-          restToAdd = a.rest;
-          restToAdd += t.rest;
-          // if (t > 9) { restToAdd += t % 10; }
-          r.push(t.digit);
-          // r += `${}`
-          i--;
-          j--;
-      }
-      if (d1 && !d2) {
-          const a = addDigits(+d1, restToAdd);
-          r.push(a.digit);
-          restToAdd = a.rest;
-          i--;
-      }
+      // const b = addDigits(a.digit, restToAdd);
+      restToAdd = a.rest;
+      restToAdd += t.rest;
+      // if (t > 9) { restToAdd += t % 10; }
+      r.push(t.digit);
+      // r += `${}`
+      i--;
+      j--;
+    }
+    if (d1 && !d2) {
+      const a = addDigits(+d1, restToAdd);
+      r.push(a.digit);
+      restToAdd = a.rest;
+      i--;
+    }
 
-      if (d2 && !d1) {
-          const a = addDigits(+d2, restToAdd);
-          r.push(a.digit);
-          restToAdd = a.rest;
-          j--;
-      }
-      
+    if (d2 && !d1) {
+      const a = addDigits(+d2, restToAdd);
+      r.push(a.digit);
+      restToAdd = a.rest;
+      j--;
+    }
   }
   if (restToAdd > 0) {
-      r.push(restToAdd);
+    r.push(restToAdd);
   }
   return r.reverse().join("");
 };

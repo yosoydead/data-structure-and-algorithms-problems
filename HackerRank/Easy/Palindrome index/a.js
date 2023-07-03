@@ -50,28 +50,34 @@ This string is already a palindrome, so return . Removing any one of the charact
 Note: The custom checker logic for this challenge is available here.
  */
 function isPalindrom(s, start, end) {
-    while (start < end && s[start] == s[end]) {
-        start++
-        end--
-    }
-    
-    return start >= end
+  while (start < end && s[start] == s[end]) {
+    start++;
+    end--;
+  }
+
+  return start >= end;
 }
 
 function palindromeIndex(s) {
-    // Write your code here
-// Write your code here
-    let start = 0;
-    let end = s.length - 1;
-    
-    while (start < end && s[start] == s[end]) {
-        start++;
-        end--;
-    }
-        
-    if (start >= end) { return -1 }
-    if (isPalindrom(s, start + 1, end)) { return start }
-    if (isPalindrom(s, start, end - 1)) { return end }
-    
-    return -1
+  // Write your code here
+  // Write your code here
+  let start = 0;
+  let end = s.length - 1;
+
+  while (start < end && s[start] == s[end]) {
+    start++;
+    end--;
+  }
+
+  if (start >= end) {
+    return -1;
+  }
+  if (isPalindrom(s, start + 1, end)) {
+    return start;
+  }
+  if (isPalindrom(s, start, end - 1)) {
+    return end;
+  }
+
+  return -1;
 }

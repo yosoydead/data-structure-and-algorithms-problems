@@ -37,19 +37,19 @@ Constraints:
  * @param {number} n
  * @return {number}
  */
-var alternateDigitSum = function(n) {
+var alternateDigitSum = function (n) {
   let result = 0;
   let arr = [];
 
   while (n > 0) {
-      arr.push(n % 10);
-      n = Math.floor(n / 10);
+    arr.push(n % 10);
+    n = Math.floor(n / 10);
   }
 
   let pos = 0;
   for (let i = arr.length - 1; i >= 0; i--) {
-      pos % 2 === 0 ? result += arr[i] : result += (arr[i] * -1);
-      pos++;
+    pos % 2 === 0 ? (result += arr[i]) : (result += arr[i] * -1);
+    pos++;
   }
 
   return result;

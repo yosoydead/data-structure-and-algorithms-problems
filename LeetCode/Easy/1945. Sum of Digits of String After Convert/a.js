@@ -56,24 +56,24 @@ const sumDigits = (n) => {
   let result = 0;
 
   while (n > 0) {
-      result += n % 10;
-      n = Math.floor(n / 10);
+    result += n % 10;
+    n = Math.floor(n / 10);
   }
 
   return result;
 };
 
-var getLucky = function(s, k) {
+var getLucky = function (s, k) {
   let sum = 0;
   const x = 96;
 
   for (let i = 0; i < s.length; i++) {
-      const a = sumDigits(s.charCodeAt(i) - x);
-      sum += a;
+    const a = sumDigits(s.charCodeAt(i) - x);
+    sum += a;
   }
 
   for (let i = 0; i < k - 1; i++) {
-      sum = sumDigits(sum);
+    sum = sumDigits(sum);
   }
 
   return sum;

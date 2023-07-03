@@ -44,46 +44,48 @@ All the calls to pop and peek are valid.
 
 Follow-up: Can you implement the queue such that each operation is amortized O(1) time complexity? In other words, performing n operations will take overall O(n) time even if one of those operations may take longer.
  */
-var MyQueue = function() {
+var MyQueue = function () {
   this.queue = [];
 };
 
-/** 
-* @param {number} x
-* @return {void}
-*/
-MyQueue.prototype.push = function(x) {
+/**
+ * @param {number} x
+ * @return {void}
+ */
+MyQueue.prototype.push = function (x) {
   this.queue.unshift(x);
 };
 
 /**
-* @return {number}
-*/
-MyQueue.prototype.pop = function() {
+ * @return {number}
+ */
+MyQueue.prototype.pop = function () {
   return this.queue.pop();
 };
 
 /**
-* @return {number}
-*/
-MyQueue.prototype.peek = function() {
+ * @return {number}
+ */
+MyQueue.prototype.peek = function () {
   const len = this.queue.length;
-  if (len === 0) { return null; }
-  return this.queue[len-1];
+  if (len === 0) {
+    return null;
+  }
+  return this.queue[len - 1];
 };
 
 /**
-* @return {boolean}
-*/
-MyQueue.prototype.empty = function() {
+ * @return {boolean}
+ */
+MyQueue.prototype.empty = function () {
   return this.queue.length === 0;
 };
 
-/** 
-* Your MyQueue object will be instantiated and called as such:
-* var obj = new MyQueue()
-* obj.push(x)
-* var param_2 = obj.pop()
-* var param_3 = obj.peek()
-* var param_4 = obj.empty()
-*/
+/**
+ * Your MyQueue object will be instantiated and called as such:
+ * var obj = new MyQueue()
+ * obj.push(x)
+ * var param_2 = obj.pop()
+ * var param_3 = obj.peek()
+ * var param_4 = obj.empty()
+ */

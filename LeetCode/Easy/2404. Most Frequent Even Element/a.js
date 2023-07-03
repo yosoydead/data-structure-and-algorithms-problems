@@ -35,22 +35,23 @@ Constraints:
  * @param {number[]} nums
  * @return {number}
  */
-var mostFrequentEven = function(nums) {
+var mostFrequentEven = function (nums) {
   const frec = {};
   let num = -1;
 
   for (let i = 0; i < nums.length; i++) {
-      const current = nums[i];
-      if (nums[i] % 2 === 0) {
-
-          frec[nums[i]] ? frec[nums[i]]++ : frec[nums[i]] = 1;
-          const cf = frec[current];
-          if (cf > num) {
-              num = cf;
-          }
+    const current = nums[i];
+    if (nums[i] % 2 === 0) {
+      frec[nums[i]] ? frec[nums[i]]++ : (frec[nums[i]] = 1);
+      const cf = frec[current];
+      if (cf > num) {
+        num = cf;
       }
+    }
   }
 
-  if (num > -1) { num = Math.min(...Object.keys(frec).filter((key) => frec[key] === num)); }
+  if (num > -1) {
+    num = Math.min(...Object.keys(frec).filter((key) => frec[key] === num));
+  }
   return num;
 };

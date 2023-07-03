@@ -43,15 +43,18 @@ Constraints
 1 ≤ b[i] ≤ 100
 */
 function compareTriplets(a, b) {
-    return a.reduce((acc, _, i) => {
-        if (a[i] > b[i]) {
-            acc[0]++;
-        }
-        
-        if (a[i] < b[i]) {
-            acc[1]++;
-        }
-        
-        return acc;
-    }, [0, 0]);
+  return a.reduce(
+    (acc, _, i) => {
+      if (a[i] > b[i]) {
+        acc[0]++;
+      }
+
+      if (a[i] < b[i]) {
+        acc[1]++;
+      }
+
+      return acc;
+    },
+    [0, 0]
+  );
 }

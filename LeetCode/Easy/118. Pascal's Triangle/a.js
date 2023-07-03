@@ -26,26 +26,30 @@ Constraints:
  * @param {number} numRows
  * @return {number[][]}
  */
-var generate = function(numRows) {
-  if (numRows === 1) { return [ [1] ]; }
-  if (numRows === 2) { return [ [1], [1, 1] ]; }
+var generate = function (numRows) {
+  if (numRows === 1) {
+    return [[1]];
+  }
+  if (numRows === 2) {
+    return [[1], [1, 1]];
+  }
 
-  const result = [ [1], [1, 1] ];
+  const result = [[1], [1, 1]];
 
   for (let i = 2; i < numRows; i++) {
-      const a = [];
+    const a = [];
 
-      for (let j = 0; j <= i; j++) {
-          if (j === 0 || j === i) {
-              a[j] = 1;
-          }
-          const left = result[i-1][j-1];
-          const right = result[i-1][j];
-          if (left && right) {
-              a[j] = left + right;
-          }
+    for (let j = 0; j <= i; j++) {
+      if (j === 0 || j === i) {
+        a[j] = 1;
       }
-      result.push(a);
+      const left = result[i - 1][j - 1];
+      const right = result[i - 1][j];
+      if (left && right) {
+        a[j] = left + right;
+      }
+    }
+    result.push(a);
   }
 
   return result;

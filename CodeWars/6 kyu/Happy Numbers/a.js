@@ -26,9 +26,9 @@ const addSquareDigits = (n) => {
   let result = 0;
 
   while (n > 0) {
-      const d = n % 10;
-      result += Math.pow(d, 2);
-      n = Math.floor(n / 10);
+    const d = n % 10;
+    result += Math.pow(d, 2);
+    n = Math.floor(n / 10);
   }
 
   return result;
@@ -37,26 +37,35 @@ const addSquareDigits = (n) => {
 const isHappy = (n) => {
   const f = {};
   while (true) {
-        const x = addSquareDigits(n);
-        if (x === 1) { return true; }
-        n = x;
-        if (f[x]) { return false; }
-        else { f[x] = 1; }
+    const x = addSquareDigits(n);
+    if (x === 1) {
+      return true;
     }
-}
+    n = x;
+    if (f[x]) {
+      return false;
+    } else {
+      f[x] = 1;
+    }
+  }
+};
 
-function happyNumbers(n){
+function happyNumbers(n) {
   // Put your answer here
-  if (n === 1) { return true; }
-  if (n < 5) { return false; }
+  if (n === 1) {
+    return true;
+  }
+  if (n < 5) {
+    return false;
+  }
 
   const res = [];
 
   for (let i = 1; i <= n; i++) {
-      if (isHappy(i)) {
-        res.push(i);
-      }
+    if (isHappy(i)) {
+      res.push(i);
+    }
   }
-  
+
   return res;
 }

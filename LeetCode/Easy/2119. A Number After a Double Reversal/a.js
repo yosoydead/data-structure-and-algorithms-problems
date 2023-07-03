@@ -42,15 +42,17 @@ const reverseNumber = (num) => {
   let result = 0;
 
   while (num > 0) {
-      const d = num % 10;
-      result = (result * 10) + d;
-      num = Math.floor(num / 10);
+    const d = num % 10;
+    result = result * 10 + d;
+    num = Math.floor(num / 10);
   }
 
   return result;
-}
-var isSameAfterReversals = function(num) {
-  if (num === 0) { return  true; }
+};
+var isSameAfterReversals = function (num) {
+  if (num === 0) {
+    return true;
+  }
   // console.log(reverseNumber(1800));
   const r1 = reverseNumber(num);
   const r2 = reverseNumber(r1);

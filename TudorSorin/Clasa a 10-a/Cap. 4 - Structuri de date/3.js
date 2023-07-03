@@ -7,13 +7,13 @@ function trei(p) {
 
   const k = 3;
   for (let i = 0; i < k; i++) {
-    arr.push(i+1);
+    arr.push(i + 1);
   }
 
-  for (let i = p-1; i < arr.length-1; i++) {
+  for (let i = p - 1; i < arr.length - 1; i++) {
     const x = arr[i + 1];
     arr[i] = x;
   }
-  arr.pop()
+  arr.pop();
 }
 // three(2);

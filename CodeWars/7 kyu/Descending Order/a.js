@@ -9,14 +9,13 @@ Input: 145263 Output: 654321
 
 Input: 123456789 Output: 987654321
  */
-function descendingOrder(n){
+function descendingOrder(n) {
   //...
-  if(n < 12){
+  if (n < 12) {
     return n;
   }
-  
-  let str = n.toString().split('').sort().reverse().join('');
-  
+
+  let str = n.toString().split("").sort().reverse().join("");
+
   return Number.parseInt(str);
-  
 }

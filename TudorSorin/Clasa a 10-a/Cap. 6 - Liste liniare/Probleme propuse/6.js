@@ -8,11 +8,11 @@ import List from "../lista.js";
 function x(a, b) {
   const trei = new List();
 
-  while(a) {
+  while (a) {
     trei.push(a.val);
     a = a.next;
   }
-  while(b) {
+  while (b) {
     trei.push(b.val);
     b = b.next;
   }

@@ -41,20 +41,22 @@ Follow up: Could you do it in O(n) time and O(1) space?
  * @param {ListNode} head
  * @return {boolean}
  */
-var isPalindrome = function(head) {
-    let s = "";
-    while (head) {
-        s += head.val;
-        head = head.next;
-    }
+var isPalindrome = function (head) {
+  let s = "";
+  while (head) {
+    s += head.val;
+    head = head.next;
+  }
 
-    let i = 0;
-    let j = s.length - 1;
-    while (i < j) {
-        if (s[i] !== s[j]) { return false; }
-        i++;
-        j--;
+  let i = 0;
+  let j = s.length - 1;
+  while (i < j) {
+    if (s[i] !== s[j]) {
+      return false;
     }
+    i++;
+    j--;
+  }
 
-    return true;
+  return true;
 };

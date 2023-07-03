@@ -42,24 +42,24 @@ const digitOverflow = (d) => {
   return d + 1 === 10;
 };
 
-var plusOne = function(digits) {
-   let carry = false;
+var plusOne = function (digits) {
+  let carry = false;
 
   for (let i = digits.length - 1; i >= 0; i--) {
-      const overflow = digitOverflow(digits[i]);
-      if (overflow) {
-          digits[i] = 0;
-          carry = true;
-      } else {
-          digits[i] += 1;
-          carry = false;
-          break;
-      }
+    const overflow = digitOverflow(digits[i]);
+    if (overflow) {
+      digits[i] = 0;
+      carry = true;
+    } else {
+      digits[i] += 1;
+      carry = false;
+      break;
+    }
   }
-  
+
   if (carry) {
     digits.unshift(1);
   }
-  
+
   return digits;
 };

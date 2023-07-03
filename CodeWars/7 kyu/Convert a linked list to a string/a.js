@@ -35,8 +35,10 @@ For the simplicity of this Kata, you may assume that any Node in this Kata may o
 Enjoy, and don't forget to check out my other Kata Series :D
  */
 function stringify(list) {
-  if (!list) { return "null"; }
-  
+  if (!list) {
+    return "null";
+  }
+
   const res = [];
 
   while (list) {

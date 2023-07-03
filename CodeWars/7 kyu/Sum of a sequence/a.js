@@ -19,10 +19,10 @@ Sum of a Sequence [Hard-Core Version]
 const sequenceSum = (begin, end, step) => {
   // May the Force be with you
   let s = 0;
-  
+
   for (let i = begin; i <= end; i += step) {
     s += i;
   }
-  
+
   return s;
 };

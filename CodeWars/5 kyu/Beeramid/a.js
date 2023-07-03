@@ -15,16 +15,18 @@ beeramid(1500, 2); // should === 12
 beeramid(5000, 3); // should === 16
  */
 // Returns number of complete beeramid levels
-var beeramid = function(bonus, price) {
-  if (bonus < 0) { return 0; }
-  
+var beeramid = function (bonus, price) {
+  if (bonus < 0) {
+    return 0;
+  }
+
   let numOfBeers = Math.floor(bonus / price);
   let rowNumber = 0;
-  
+
   while (numOfBeers >= Math.pow(rowNumber + 1, 2)) {
     rowNumber++;
     numOfBeers -= Math.pow(rowNumber, 2);
   }
 
   return rowNumber;
-}
+};

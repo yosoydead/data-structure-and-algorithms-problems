@@ -7,12 +7,15 @@
 function one(m, n) {
   const cmmdc = (x, y) => {
     while (x !== y) {
-      if (x > y) { x -= y; }
-      else { y -= x; }
+      if (x > y) {
+        x -= y;
+      } else {
+        y -= x;
+      }
     }
 
     return x;
-  }
+  };
 
   const res = cmmdc(m, n);
   console.log(m, n, res);

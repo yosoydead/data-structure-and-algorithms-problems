@@ -16,29 +16,29 @@ The sum of the squares of the numbers is:
 
 Hence the difference between square of the sum of the first ten natural numbers and the sum of the squares of those numbes is: 3025 - 385 = 2640
  */
-function a(num){
+function a(num) {
   let result = 0;
-  for(let i = 1; i <= num; i++){
+  for (let i = 1; i <= num; i++) {
     result += i;
   }
-  
+
   return result * result;
 }
 
-function b(num){
+function b(num) {
   let result = 0;
-  for(let i = 1; i <= num; i++){
+  for (let i = 1; i <= num; i++) {
     let calc = i * i;
     result += calc;
   }
-  
+
   return result;
 }
 
-function differenceOfSquares(n){
+function differenceOfSquares(n) {
   // ...
   let big = a(n);
   let small = b(n);
-  
+
   return big - small;
 }

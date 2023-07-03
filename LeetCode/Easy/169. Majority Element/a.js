@@ -30,19 +30,19 @@ Follow-up: Could you solve the problem in linear time and in O(1) space?
  * @param {number[]} nums
  * @return {number}
  */
-var majorityElement = function(nums) {
+var majorityElement = function (nums) {
   const frec = {};
   let most = nums[0];
 
   for (let i = 0; i < nums.length; i++) {
-      if (!frec[nums[i]]) {
-          frec[nums[i]] = 1;
-      } else {
-          frec[nums[i]]++;
-          if (frec[most] < frec[nums[i]]) {
-              most = nums[i];
-          }
+    if (!frec[nums[i]]) {
+      frec[nums[i]] = 1;
+    } else {
+      frec[nums[i]]++;
+      if (frec[most] < frec[nums[i]]) {
+        most = nums[i];
       }
+    }
   }
 
   return most;

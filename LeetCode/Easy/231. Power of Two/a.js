@@ -34,14 +34,18 @@ Follow up: Could you solve it without loops/recursion?
  * @param {number} n
  * @return {boolean}
  */
-var isPowerOfTwo = function(n) {
-  if (n === 1) { return true; }
+var isPowerOfTwo = function (n) {
+  if (n === 1) {
+    return true;
+  }
 
   let num = 2;
   let copy = Math.abs(n);
   while (num <= copy) {
-      if (n === num) { return true; }
-      num *= 2;
+    if (n === num) {
+      return true;
+    }
+    num *= 2;
   }
 
   return false;

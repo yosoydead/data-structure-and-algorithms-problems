@@ -34,10 +34,10 @@ ALL translations are welcomed
 Enjoy Learning !!
 Zizou
 */
-function maxMultiple(divisor, bound){
+function maxMultiple(divisor, bound) {
   //your code here
-  for(let i = bound; i > 0; i--){
-    if(i % divisor ==0){
+  for (let i = bound; i > 0; i--) {
+    if (i % divisor == 0) {
       return i;
     }
   }

@@ -13,7 +13,7 @@ const generateExpression = (folderName) => {
 const generateDetailedFolders = (arr) => {
   return `
 Current problems sources:
-${arr.map((el, index) => `${index+1}. ${el.folder}: ${el.number}`).join('\n')}
+${arr.map((el, index) => `${index + 1}. ${el.folder}: ${el.number}`).join("\n")}
 `;
 };
 
@@ -43,14 +43,14 @@ function execute(command) {
    * @param {Function} reject A function that fails the promise
    * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
    */
-  return new Promise(function(resolve, reject) {
+  return new Promise(function (resolve, reject) {
     /**
      * @param {Error} error An error triggered during the execution of the childProcess.exec command
      * @param {string|Buffer} standardOutput The result of the shell command execution
      * @param {string|Buffer} standardError The error resulting of the shell command execution
      * @see https://nodejs.org/api/child_process.html#child_process_child_process_exec_command_options_callback
      */
-    childProcess.execFile(command, [], {shell: true}, function(...args) {
+    childProcess.execFile(command, [], { shell: true }, function (...args) {
       // console.log("args", args);
       if (args[0]) {
         reject(args[0]);
@@ -59,7 +59,9 @@ function execute(command) {
       }
 
       if (args[2]) {
-        if (args[2].includes("warning")) { resolve(args[1]); }
+        if (args[2].includes("warning")) {
+          resolve(args[1]);
+        }
         reject(args[2]);
 
         return;
@@ -89,7 +91,7 @@ async function main() {
     await execute("git status");
 
     console.log(`Am gasit ${jsFileCount} fisiere de JS. O sa scad 1 din cauza scriptului de post commit.`);
-    const text = generateMarkdownText(jsFileCount-1, detailedFolders);
+    const text = generateMarkdownText(jsFileCount - 1, detailedFolders);
 
     fs.writeFileSync("readme.md", text, (err) => {
       if (err) {

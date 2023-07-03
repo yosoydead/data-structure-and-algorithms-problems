@@ -18,20 +18,20 @@ function x(param) {
   const cifre = [];
   let c = l.head;
 
-  while(c) {
+  while (c) {
     cifre.push(+c.val);
     c = c.next;
   }
 
   let nr = 0;
-  cifre.reverse().forEach(n => {
-    nr = (nr * 10) + n;
+  cifre.reverse().forEach((n) => {
+    nr = nr * 10 + n;
   });
 
   let res = nr * param;
   const newList = new List();
 
-  while(res > 0) {
+  while (res > 0) {
     newList.push(res % 10);
     res = Math.floor(res / 10);
   }

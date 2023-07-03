@@ -52,10 +52,10 @@ Explanation
 The staircase is right-aligned, composed of # symbols and spaces, and has a height and width of .
  */
 function staircase(n) {
-    // Write your code here
-    for(let i = 1; i <= n; i++) {
-        const spaces = n - i;
-        const s = `${" ".repeat(spaces)}${"#".repeat(i)}`;
-        console.log(s);
-    }
+  // Write your code here
+  for (let i = 1; i <= n; i++) {
+    const spaces = n - i;
+    const s = `${" ".repeat(spaces)}${"#".repeat(i)}`;
+    console.log(s);
+  }
 }

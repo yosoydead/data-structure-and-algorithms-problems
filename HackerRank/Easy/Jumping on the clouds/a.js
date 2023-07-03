@@ -52,15 +52,15 @@ The only thundercloud to avoid is . The game can be won in  jumps:
 jump(5).png
  */
 function jumpingOnClouds(c) {
-    // Write your code here
-    let jumps = 0;
-    let i = 0;
-    while (i < c.length - 1) {
-        if (i+2 < c.length && c[i+2] != 1) {
-            i += 1
-        }
-        jumps += 1
-        i += 1
+  // Write your code here
+  let jumps = 0;
+  let i = 0;
+  while (i < c.length - 1) {
+    if (i + 2 < c.length && c[i + 2] != 1) {
+      i += 1;
     }
-    return jumps
+    jumps += 1;
+    i += 1;
+  }
+  return jumps;
 }

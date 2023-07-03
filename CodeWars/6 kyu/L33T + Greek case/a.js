@@ -22,17 +22,35 @@ Examples:
 CodeWars => cθδεωαπs
 Kata => κατα
  */
-function GrεεκL33t(str){
+function GrεεκL33t(str) {
   //Think out of the block!!
-   const map = {
-       a:'α',b:'β',d:'δ',e:'ε',
-       i:'ι',k:'κ',n:'η',o:'θ',
-       p:'ρ',r:'π',t:'τ',u:'μ',
-       v:'υ',w:'ω',x:'χ',y:'γ'
-    };
-   
-   return str.toLowerCase().split("").map(el => {
-     if (map[el]) { return map[el]; }
-     return el;
-   }).join("");
- }
+  const map = {
+    a: "α",
+    b: "β",
+    d: "δ",
+    e: "ε",
+    i: "ι",
+    k: "κ",
+    n: "η",
+    o: "θ",
+    p: "ρ",
+    r: "π",
+    t: "τ",
+    u: "μ",
+    v: "υ",
+    w: "ω",
+    x: "χ",
+    y: "γ",
+  };
+
+  return str
+    .toLowerCase()
+    .split("")
+    .map((el) => {
+      if (map[el]) {
+        return map[el];
+      }
+      return el;
+    })
+    .join("");
+}

@@ -19,25 +19,24 @@ A word (string) of length 0 < str < 1000 (In javascript you may get slightly mor
 
 The middle character(s) of the word represented as a string.
  */
-function getMiddle(s)
-{
-  if(s.length === 1){
+function getMiddle(s) {
+  if (s.length === 1) {
     return s;
   }
-  
+
   //Code goes here!
-  if(s.length % 2 !== 0){
+  if (s.length % 2 !== 0) {
     let index = Math.floor(s.length / 2);
-    
+
     return s[index];
   }
-  
+
   let left = 0;
-  let right = s.length -1;
-  while(left < right){
+  let right = s.length - 1;
+  while (left < right) {
     left++;
     right--;
   }
-  
+
   return `${s[right]}${s[left]}`;
 }

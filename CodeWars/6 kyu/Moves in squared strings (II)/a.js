@@ -23,28 +23,28 @@ or printed:
                            ....dcba
  */
 function rot(strng) {
-    // your code
-    let words = strng.split('\n');
-    
-    for(let i = 0; i < words.length; i++){
-      let w = words[i].split('').reverse().join('');
-      
-      words[i] = w;
-    }
-    
-    return words.reverse().join("\n");
+  // your code
+  let words = strng.split("\n");
+
+  for (let i = 0; i < words.length; i++) {
+    let w = words[i].split("").reverse().join("");
+
+    words[i] = w;
+  }
+
+  return words.reverse().join("\n");
 }
 function selfieAndRot(strng) {
-    // your code
-    let sep = '.'.repeat(strng.split('\n')[0].length);
-    let words = strng.split('\n').join(`${sep}\n`);
-    let rotated = rot(strng).split("\n").join(`\n${sep}`);
-    // console.log(rotated)
-    // return `${words}....\n....${rotated}`;
+  // your code
+  let sep = ".".repeat(strng.split("\n")[0].length);
+  let words = strng.split("\n").join(`${sep}\n`);
+  let rotated = rot(strng).split("\n").join(`\n${sep}`);
+  // console.log(rotated)
+  // return `${words}....\n....${rotated}`;
 
-    return `${words}${sep}\n${sep}${rotated}`;
+  return `${words}${sep}\n${sep}${rotated}`;
 }
 function oper(fct, s) {
-    // your code
-    return fct(s)
+  // your code
+  return fct(s);
 }

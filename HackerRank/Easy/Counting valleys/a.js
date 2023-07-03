@@ -46,27 +46,27 @@ _/\      _
 The hiker enters and leaves one valley.
  */
 function countingValleys(steps, path) {
-    // Write your code here
-    let bla = 0;
-    let vale = false;
-    let cnt = 0;
+  // Write your code here
+  let bla = 0;
+  let vale = false;
+  let cnt = 0;
 
-    for (let i = 0; i < path.length; i++) {
-        const item = path[i];
-        if (item == 'U') {
-            bla += 1
-        } else if (item == 'D') {
-            bla -= 1
-        }
-
-        if (bla < 0) {
-            if (vale === false) {
-                cnt += 1
-            }
-            vale = true
-        } else if (bla > 0 || bla === 0) {
-            vale = false
-        }
+  for (let i = 0; i < path.length; i++) {
+    const item = path[i];
+    if (item == "U") {
+      bla += 1;
+    } else if (item == "D") {
+      bla -= 1;
     }
-    return cnt;
+
+    if (bla < 0) {
+      if (vale === false) {
+        cnt += 1;
+      }
+      vale = true;
+    } else if (bla > 0 || bla === 0) {
+      vale = false;
+    }
+  }
+  return cnt;
 }

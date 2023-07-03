@@ -11,13 +11,13 @@ Characters can be in the range from "00000000" to "11111111" (inclusive)
 Note: In the case of an empty binary string your function should return an empty string.
  */
 function binaryToString(binary) {
-  if(binary === ""){
+  if (binary === "") {
     return "";
   }
 
   let result = "";
-  for(let i = 0; i < binary.length; i+=8){
-    let current = binary.slice(i, i+8);
+  for (let i = 0; i < binary.length; i += 8) {
+    let current = binary.slice(i, i + 8);
     let char = String.fromCharCode(convert(current));
 
     result += char;
@@ -26,15 +26,15 @@ function binaryToString(binary) {
   return result;
 }
 
-function convert(bin){
+function convert(bin) {
   let pow = 7;
   let result = 0;
 
-  for(let i = 0; i<bin.length; i++){
-    if(bin[i] === '1'){
-      result += (1* Math.pow(2, pow));
-    }else{
-      result += (0 * Math.pow(2, pow));
+  for (let i = 0; i < bin.length; i++) {
+    if (bin[i] === "1") {
+      result += 1 * Math.pow(2, pow);
+    } else {
+      result += 0 * Math.pow(2, pow);
     }
 
     pow--;

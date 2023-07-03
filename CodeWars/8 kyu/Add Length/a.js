@@ -10,7 +10,7 @@ Your task is to write a function that takes a String and returns an Array/list w
 Note: String will have at least one element; words will always be separated by a space. */
 function addLength(str) {
   //start-here
-    return str.split(" ").map((myString) => {
-      return `${myString} ${myString.length}`
-    });
-  }
+  return str.split(" ").map((myString) => {
+    return `${myString} ${myString.length}`;
+  });
+}

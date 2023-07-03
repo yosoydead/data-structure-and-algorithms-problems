@@ -5,7 +5,7 @@
  * 5 -> 9 -> 4 -> 7 -> 9
  * 5 -> 0 -> 1 -> 3 -> 0 -> 1
  */
-import List from '../lista.js';
+import List from "../lista.js";
 
 function x() {
   const l1 = new List();

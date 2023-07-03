@@ -48,20 +48,20 @@ Hints: Beware of integer overflow! Use 64-bit Integer.
 Need help to get started? Try the Solve Me First problem
  */
 function miniMaxSum(arr) {
-    // Write your code here
-    arr.sort((a, b) => a - b);
-    
-    let min = 0;
-    let max = 0;
-    
-    let i = 0;
-    let j = arr.length - 1;
-    while (i < 4 && j > 0) {
-        min += arr[i];
-        max += arr[j];
-        i++;
-        j--;
-    }
-    
-    console.log(`${min} ${max}`);
+  // Write your code here
+  arr.sort((a, b) => a - b);
+
+  let min = 0;
+  let max = 0;
+
+  let i = 0;
+  let j = arr.length - 1;
+  while (i < 4 && j > 0) {
+    min += arr[i];
+    max += arr[j];
+    i++;
+    j--;
+  }
+
+  console.log(`${min} ${max}`);
 }

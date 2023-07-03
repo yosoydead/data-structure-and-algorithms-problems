@@ -39,13 +39,15 @@ Follow up: Could you implement a solution using only O(1) extra space complexity
  * @param {number[]} nums
  * @return {number}
  */
-var missingNumber = function(nums) {
+var missingNumber = function (nums) {
   let max = -1;
   let arrSum = 0;
 
   for (let i = 0; i < nums.length; i++) {
-      if (nums[i] > max) { max = nums [i]; }
-      arrSum += nums[i];
+    if (nums[i] > max) {
+      max = nums[i];
+    }
+    arrSum += nums[i];
   }
 
   const x = Math.floor(((0 + nums.length) * (nums.length - 0 + 1)) / 2);

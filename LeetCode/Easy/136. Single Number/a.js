@@ -34,15 +34,15 @@ Each element in the array appears twice except for one element which appears onl
  * @param {number[]} nums
  * @return {number}
  */
-var singleNumber = function(nums) {
+var singleNumber = function (nums) {
   const frec = {};
 
   for (let i = 0; i < nums.length; i++) {
-      if (!frec[nums[i]]) {
-          frec[nums[i]] = 1;
-      } else {
-          delete frec[nums[i]];
-      }
+    if (!frec[nums[i]]) {
+      frec[nums[i]] = 1;
+    } else {
+      delete frec[nums[i]];
+    }
   }
 
   return Object.keys(frec)[0];

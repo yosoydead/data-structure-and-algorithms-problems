@@ -10,15 +10,15 @@ const forbidden = "
                   precision
                   .keys
  */
-                  function reverse(n){
-                    // your code here
-                    let res = 0;
-                    
-                    while (n > 0) {
-                      const d = n % 10;
-                      res = res * 10 + d;
-                      n = Math.floor(n / 10);
-                    }
-                  
-                    return res;
-                  }
+function reverse(n) {
+  // your code here
+  let res = 0;
+
+  while (n > 0) {
+    const d = n % 10;
+    res = res * 10 + d;
+    n = Math.floor(n / 10);
+  }
+
+  return res;
+}

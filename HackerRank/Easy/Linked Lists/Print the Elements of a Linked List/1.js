@@ -36,54 +36,55 @@ Explanation
 
 There are two elements in the linked list. They are represented as 16 -> 13 -> NULL. So, the printLinkedList function should print 16 and 13 each on a new line.
  */
-'use strict';
+"use strict";
 
 process.stdin.resume();
-process.stdin.setEncoding('utf-8');
+process.stdin.setEncoding("utf-8");
 
-let inputString = '';
+let inputString = "";
 let currentLine = 0;
 
-process.stdin.on('data', inputStdin => {
-    inputString += inputStdin;
+process.stdin.on("data", (inputStdin) => {
+  inputString += inputStdin;
 });
 
-process.stdin.on('end', _ => {
-    inputString = inputString.replace(/\s*$/, '')
-        .split('\n')
-        .map(str => str.replace(/\s*$/, ''));
+process.stdin.on("end", (_) => {
+  inputString = inputString
+    .replace(/\s*$/, "")
+    .split("\n")
+    .map((str) => str.replace(/\s*$/, ""));
 
-    main();
+  main();
 });
 
 function readLine() {
-    return inputString[currentLine++];
+  return inputString[currentLine++];
 }
 
 const SinglyLinkedListNode = class {
-    constructor(nodeData) {
-        this.data = nodeData;
-        this.next = null;
-    }
+  constructor(nodeData) {
+    this.data = nodeData;
+    this.next = null;
+  }
 };
 
 const SinglyLinkedList = class {
-    constructor() {
-        this.head = null;
-        this.tail = null;
+  constructor() {
+    this.head = null;
+    this.tail = null;
+  }
+
+  insertNode(nodeData) {
+    const node = new SinglyLinkedListNode(nodeData);
+
+    if (this.head == null) {
+      this.head = node;
+    } else {
+      this.tail.next = node;
     }
 
-    insertNode(nodeData) {
-        const node = new SinglyLinkedListNode(nodeData);
-
-        if (this.head == null) {
-            this.head = node;
-        } else {
-            this.tail.next = node;
-        }
-
-        this.tail = node;
-    }
+    this.tail = node;
+  }
 };
 
 // Complete the printLinkedList function below.
@@ -98,7 +99,9 @@ const SinglyLinkedList = class {
  *
  */
 function printLinkedList(head) {
-    if (!head) { return; }
-    console.log(head.data);
-    printLinkedList(head.next);
+  if (!head) {
+    return;
+  }
+  console.log(head.data);
+  printLinkedList(head.next);
 }

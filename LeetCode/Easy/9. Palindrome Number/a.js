@@ -34,23 +34,25 @@ Follow up: Could you solve it without converting the integer to a string?
  * @param {number} x
  * @return {boolean}
  */
-var isPalindrome = function(x) {
-  if (x < 0) { return false; }
+var isPalindrome = function (x) {
+  if (x < 0) {
+    return false;
+  }
   const nums = [];
   let n = x;
   while (n !== 0) {
-      nums.push(n % 10);
-      n = Math.floor(n / 10);
+    nums.push(n % 10);
+    n = Math.floor(n / 10);
   }
 
   let i = 0;
-  let j = nums.length -1;
+  let j = nums.length - 1;
   while (i < j) {
-      if (nums[i] !== nums[j]) {
-          return false;
-      }
-      i++;
-      j--;
+    if (nums[i] !== nums[j]) {
+      return false;
+    }
+    i++;
+    j--;
   }
 
   return true;

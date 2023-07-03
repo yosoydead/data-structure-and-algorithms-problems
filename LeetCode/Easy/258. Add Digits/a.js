@@ -34,20 +34,22 @@ const sumDigits = (num) => {
   let result = 0;
 
   while (num > 0) {
-      const d = num % 10;
-      result += d;
-      num = Math.floor(num / 10);
+    const d = num % 10;
+    result += d;
+    num = Math.floor(num / 10);
   }
 
   return result;
 };
 
-var addDigits = function(num) {
-  if (num === 0) { return 0; }
+var addDigits = function (num) {
+  if (num === 0) {
+    return 0;
+  }
 
   let sum = sumDigits(num);
   while (sum > 9) {
-      sum = sumDigits(sum);
+    sum = sumDigits(sum);
   }
 
   return sum;

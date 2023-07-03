@@ -16,6 +16,6 @@ The first line contains an integer, , denoting the size of the array.
 The second line contains  space-separated integers representing the array's elements.
 */
 function simpleArraySum(ar) {
-    // Write your code here
-    return ar.reduce((acc, num) => acc + num, 0);
+  // Write your code here
+  return ar.reduce((acc, num) => acc + num, 0);
 }

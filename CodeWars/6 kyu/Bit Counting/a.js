@@ -4,18 +4,18 @@ Write a function that takes an integer as input, and returns the number of bits 
 
 Example: The binary representation of 1234 is 10011010010, so the function should return 5 in this case
  */
-var countBits = function(n) {
+var countBits = function (n) {
   // Program Me
   let ones = 0;
   let backup = n;
-  while(backup > 0) {
+  while (backup > 0) {
     let mod = backup % 2;
-    if(mod === 1){
+    if (mod === 1) {
       ones++;
     }
-    
-    backup = Math.floor(backup/2);
+
+    backup = Math.floor(backup / 2);
   }
-  
+
   return ones;
 };

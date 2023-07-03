@@ -7,12 +7,14 @@ Example
 findMissing([1, 3, 5, 9, 11]) == 7
 PS: This is a sample question of the facebook engineer challenge on interviewstreet. I found it quite fun to solve on paper using math, derive the algo that way. Have fun!
  */
-var findMissing = function (list) {  
+var findMissing = function (list) {
   const diff = Math.floor((list[list.length - 1] - list[0]) / list.length);
-  
+
   for (let i = 0; i < list.length - 1; i++) {
-    if (list[i + 1] - list [i] !== diff) { return list[i] + diff; }
+    if (list[i + 1] - list[i] !== diff) {
+      return list[i] + diff;
+    }
   }
-  
+
   return 0;
-}
+};

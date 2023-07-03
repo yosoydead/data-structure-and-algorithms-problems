@@ -1,17 +1,17 @@
 /**
  * Se citesc de la tastatura N numere naturale. Se cere ca acestea sa fie
  *  sortate crescator prin utilizarea metodei de sortare prin insertie.
- * 
+ *
  * Ideea de baza a metodei consta in a considera primele K valori sortate,
  *  urmand sa inseram valoarea K+1 in sirul deja sortat. Prin utilizarea listelor
  *  liniare inlantuite, insertia este mai simpla, intrucat nu necesita deplasarea
  *  componentelor, ca in cazul vectorilor.
- * 
+ *
  * Pentru simplificarea algoritmului, lista va contine valoarea maxima MAXINT
  *  alocata deja in lista. In acest fel, algoritmul se simplifica pt ca se
  *  porneste deja de la o lista liniara nevida. Evident, valoarea MAXINT nu va
  *  fi listata, atunci cand se tiparesc numerele sortate.
- * 
+ *
  * Problema se reduce la insertia unui nr intr-o lista deja sortata. Mai intai
  *  se aloca spatiu in HEAP pentru o valoare, apoi aceasta e citita. Se disting
  *  doua cazuri:
@@ -36,10 +36,10 @@
  *  Noua valare se insereaza in lista. 3 -> 7 -> 8 -> 9 -> MAXINT
  */
 class Node {
-    constructor(val, next) {
-        this.val = val;
-        this.next = next;
-    }
+  constructor(val, next) {
+    this.val = val;
+    this.next = next;
+  }
 }
 
 const MaxInt = 32000;
@@ -47,28 +47,28 @@ const arr = [10, 100, 46, 60, 96, 83, 53, 76, 3, 29, 46];
 const list = new Node(MaxInt, null);
 
 function sort() {
-    let head = list;
-    for (let i = 0; i < arr.length; i++) {
-        const newNode = new Node(arr[i]);
-        if (newNode.val <= head.val) {
-            newNode.next = head;
-            head = newNode;
-        } else {
-            let prev = null;
-            let cur = head;
-            while (cur.val < newNode.val) {
-                prev = cur;
-                cur = cur.next;
-            }
-            newNode.next = cur;
-            prev.next = newNode;
-        }
+  let head = list;
+  for (let i = 0; i < arr.length; i++) {
+    const newNode = new Node(arr[i]);
+    if (newNode.val <= head.val) {
+      newNode.next = head;
+      head = newNode;
+    } else {
+      let prev = null;
+      let cur = head;
+      while (cur.val < newNode.val) {
+        prev = cur;
+        cur = cur.next;
+      }
+      newNode.next = cur;
+      prev.next = newNode;
     }
+  }
 
-    while (head) {
-        console.log(head.val);
-        head = head.next;
-    }
+  while (head) {
+    console.log(head.val);
+    head = head.next;
+  }
 }
 
 sort();

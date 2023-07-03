@@ -47,17 +47,19 @@ const countOnes = (n) => {
   let result = 0;
 
   while (n > 0) {
-      if (n % 2 === 1) { result ++; }
-      n = Math.floor(n / 2);
+    if (n % 2 === 1) {
+      result++;
+    }
+    n = Math.floor(n / 2);
   }
   return result;
 };
 
-var countBits = function(n) {
+var countBits = function (n) {
   const arr = [];
-  for (let i = 0; i < n+1; i++) {
-      const a = countOnes(i);
-      arr.push(a);
+  for (let i = 0; i < n + 1; i++) {
+    const a = countOnes(i);
+    arr.push(a);
   }
   return arr;
 };

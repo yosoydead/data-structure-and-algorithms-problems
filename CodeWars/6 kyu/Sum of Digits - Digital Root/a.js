@@ -13,9 +13,9 @@ Examples
 function digital_root(n) {
   let number = n;
 
-  function d(nr){
+  function d(nr) {
     let s = 0;
-    while(nr > 0){
+    while (nr > 0) {
       let digit = nr % 10;
       s += digit;
       nr = Number.parseInt(nr / 10);
@@ -24,7 +24,7 @@ function digital_root(n) {
     return s;
   }
 
-  while(number > 10){
+  while (number > 10) {
     let result = d(number);
     number = result;
   }

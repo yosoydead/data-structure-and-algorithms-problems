@@ -33,31 +33,37 @@ Follow up: What if the inputs contain Unicode characters? How would you adapt yo
  * @param {string} t
  * @return {boolean}
  */
-var isAnagram = function(s, t) {
+var isAnagram = function (s, t) {
   // let n = 0;
-  if (s.length !== t.length) { return false; }
+  if (s.length !== t.length) {
+    return false;
+  }
   const frec = {};
 
   for (let i = 0; i < s.length; i++) {
-      if (!frec[s[i]]) {
-          frec[s[i]] = 1;
-      } else {
-          frec[s[i]]++;
-      }
-      // n += s.charCodeAt(i);
+    if (!frec[s[i]]) {
+      frec[s[i]] = 1;
+    } else {
+      frec[s[i]]++;
+    }
+    // n += s.charCodeAt(i);
   }
 
   for (let i = 0; i < t.length; i++) {
-      if (!frec[t[i]]) {
-          return false;
-      }
+    if (!frec[t[i]]) {
+      return false;
+    }
 
-      if (frec[t[i]]) { frec[t[i]]--; }
-      // n -= t.charCodeAt(i);
+    if (frec[t[i]]) {
+      frec[t[i]]--;
+    }
+    // n -= t.charCodeAt(i);
   }
-  const x =  Object.keys(frec);
+  const x = Object.keys(frec);
   for (let i = 0; i < x; i++) {
-      if (frec[x[i]] !== 0) { return false; }
+    if (frec[x[i]] !== 0) {
+      return false;
+    }
   }
 
   return true;

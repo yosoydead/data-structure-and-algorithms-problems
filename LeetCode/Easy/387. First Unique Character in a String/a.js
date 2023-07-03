@@ -31,17 +31,19 @@ s consists of only lowercase English letters.
  * @param {string} s
  * @return {number}
  */
-var firstUniqChar = function(s) {
+var firstUniqChar = function (s) {
   const a = Array(26).fill(0);
 
   for (let i = 0; i < s.length; i++) {
-      const x = s.charCodeAt(i);
-      a[x-97]++;
+    const x = s.charCodeAt(i);
+    a[x - 97]++;
   }
 
   for (let i = 0; i < s.length; i++) {
-      const x = s.charCodeAt(i);
-      if (a[x-97] === 1) { return i; }
+    const x = s.charCodeAt(i);
+    if (a[x - 97] === 1) {
+      return i;
+    }
   }
 
   return -1;

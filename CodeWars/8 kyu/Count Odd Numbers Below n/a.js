@@ -7,14 +7,14 @@ Examples (Input -> Output)
 15 -> 7 (because odd numbers below 15 are [1, 3, 5, 7, 9, 11, 13])
 Expect large Inputs!
  */
-function oddCount(n){
+function oddCount(n) {
   // your code here
-//   const r = [];
-//   for (let i = 0; i < n; i++) {
-//     if (i % 2 !== 0) { r.push(i); }
-//   }
-//   console.log(r)
-//   return r.length;
-  
-  return Math.floor(n / 2)
+  //   const r = [];
+  //   for (let i = 0; i < n; i++) {
+  //     if (i % 2 !== 0) { r.push(i); }
+  //   }
+  //   console.log(r)
+  //   return r.length;
+
+  return Math.floor(n / 2);
 }

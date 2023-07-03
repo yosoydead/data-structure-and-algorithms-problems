@@ -11,13 +11,13 @@ mineLocation( [ [1, 0, 0], [0, 0, 0], [0, 0, 0] ] ) => returns [0, 0]
 mineLocation( [ [0, 0, 0], [0, 1, 0], [0, 0, 0] ] ) => returns [1, 1]
 mineLocation( [ [0, 0, 0], [0, 0, 0], [0, 1, 0] ] ) => returns [2, 1]
  */
-function mineLocation(field){
-  //TODO 
-  for(let i = 0; i<field.length;i++){
-    for(let j = 0; j < field[i].length; j++){
+function mineLocation(field) {
+  //TODO
+  for (let i = 0; i < field.length; i++) {
+    for (let j = 0; j < field[i].length; j++) {
       let current = field[i][j];
-      if(current === 1){
-        return [i,j];
+      if (current === 1) {
+        return [i, j];
       }
     }
   }

@@ -31,12 +31,15 @@ Constraints:
  * @param {number} num
  * @return {number}
  */
-var findComplement = function(num) {
-  const a = Number(num).toString(2).split('');
+var findComplement = function (num) {
+  const a = Number(num).toString(2).split("");
 
   for (let i = 0; i < a.length; i++) {
-      if (a[i] === '0') { a[i] = '1'; }
-      else { a[i] = '0'; }
+    if (a[i] === "0") {
+      a[i] = "1";
+    } else {
+      a[i] = "0";
+    }
   }
 
   return Number(`0b${a.join("")}`);

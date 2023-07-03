@@ -37,21 +37,21 @@ Constraints:
 /**
  * @return {Generator<number>}
  */
-var fibGenerator = function*() {
+var fibGenerator = function* () {
   let a = 0;
   let b = 1;
   let c = a + b;
 
   while (true) {
-      yield a;
-      a = b;
-      b = c;
-      c = a + b;
+    yield a;
+    a = b;
+    b = c;
+    c = a + b;
   }
 };
 
 /**
-* const gen = fibGenerator();
-* gen.next().value; // 0
-* gen.next().value; // 1
-*/
+ * const gen = fibGenerator();
+ * gen.next().value; // 0
+ * gen.next().value; // 1
+ */

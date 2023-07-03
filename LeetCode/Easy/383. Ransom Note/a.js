@@ -34,22 +34,22 @@ ransomNote and magazine consist of lowercase English letters.
  * @param {string} magazine
  * @return {boolean}
  */
-var canConstruct = function(ransomNote, magazine) {
+var canConstruct = function (ransomNote, magazine) {
   // const f = {};
 
   // for (let i = 0; i < magazine.length; i++) {
   //     if (!f[s[i]]) { f[s[i]] = 1; }
   //     else { f[s[i]]++; }
   // }
-  const a = magazine.split('');
+  const a = magazine.split("");
 
   for (let i = 0; i < ransomNote.length; i++) {
-      const bla = a.indexOf(ransomNote[i]);
-      if (bla === -1) {
-          return false;
-      } else {
-          a[bla] = null;
-      }
+    const bla = a.indexOf(ransomNote[i]);
+    if (bla === -1) {
+      return false;
+    } else {
+      a[bla] = null;
+    }
   }
 
   return true;

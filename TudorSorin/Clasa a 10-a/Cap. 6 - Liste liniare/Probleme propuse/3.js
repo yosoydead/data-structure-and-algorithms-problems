@@ -21,7 +21,7 @@ class List {
     this.length = 0;
   }
 
-  push(elev) { 
+  push(elev) {
     const n = new Node(elev);
     if (this.length === 0) {
       this.head = n;
@@ -37,7 +37,7 @@ class List {
   print() {
     let c = this.head;
     while (c) {
-      console.log(c.val)
+      console.log(c.val);
       c = c.next;
     }
   }
@@ -56,13 +56,13 @@ class List {
 
 function print() {
   try {
-    const data = fs.readFileSync('numere.txt', 'utf8');
+    const data = fs.readFileSync("numere.txt", "utf8");
     const par = new List();
     const impar = new List();
 
-    data.split(" ").forEach(n => {
-      if(+n % 2 === 0) {
-        par.push(+n)
+    data.split(" ").forEach((n) => {
+      if (+n % 2 === 0) {
+        par.push(+n);
       } else {
         impar.push(+n);
       }

@@ -37,17 +37,19 @@ Constraints:
 const sumDigits = (n) => {
   let result = 0;
   while (n > 0) {
-      result += n % 10;
-      n = Math.floor(n / 10);
+    result += n % 10;
+    n = Math.floor(n / 10);
   }
   return result;
 };
 
-var countEven = function(num) {
+var countEven = function (num) {
   let d = 0;
 
   for (let i = 1; i <= num; i++) {
-      if (sumDigits(i) % 2 === 0) { d++; }
+    if (sumDigits(i) % 2 === 0) {
+      d++;
+    }
   }
 
   return d;

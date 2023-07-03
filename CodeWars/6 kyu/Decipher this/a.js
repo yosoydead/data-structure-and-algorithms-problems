@@ -14,27 +14,27 @@ decipherThis('82yade 115te 103o'); // 'Ready set go'
  */
 function decipherThis(str) {
   //have fun!
-    const nums = "0123456789";
-    const arr = str.split(" ");
-    
-    for (let i = 0; i < arr.length; i++) {
-      let code = "";
-      let x = arr[i].split("");
-      
-      let j = 0;
-      
-      while (nums.includes(arr[i][j])) {
-        code += arr[i][j];
-        j++;
-      }
-      
-      x = x.slice(j);
-      const a = x[0];
-      x[0] = x[x.length - 1];
-      x[x.length - 1] = a;
-      x.unshift(String.fromCharCode(+code));
-      arr[i] = x.join("");
+  const nums = "0123456789";
+  const arr = str.split(" ");
+
+  for (let i = 0; i < arr.length; i++) {
+    let code = "";
+    let x = arr[i].split("");
+
+    let j = 0;
+
+    while (nums.includes(arr[i][j])) {
+      code += arr[i][j];
+      j++;
     }
-  
+
+    x = x.slice(j);
+    const a = x[0];
+    x[0] = x[x.length - 1];
+    x[x.length - 1] = a;
+    x.unshift(String.fromCharCode(+code));
+    arr[i] = x.join("");
+  }
+
   return arr.join(" ");
-  };
+}

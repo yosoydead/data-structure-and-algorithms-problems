@@ -7,9 +7,14 @@ Complete the function that takes a string as an argument representing the curren
 For example, when the input is green, output should be yellow.
  */
 function updateLight(current) {
-  
   //your code here!
-  if (current === "green") { return "yellow"; }
-  if (current === "yellow") { return "red"; }
-  if (current === "red") { return "green"; }
+  if (current === "green") {
+    return "yellow";
+  }
+  if (current === "yellow") {
+    return "red";
+  }
+  if (current === "red") {
+    return "green";
+  }
 }

@@ -34,14 +34,16 @@ The input must be a binary string of length 32.
  * @param {number} n - a positive integer
  * @return {number}
  */
-var hammingWeight = function(n) {
+var hammingWeight = function (n) {
   let ones = 0;
   let copy = n;
 
   while (copy > 0) {
-      if (copy % 2 === 1) { ones++; };
-      // copy % 2 === 1 && ones++;
-      copy = Math.floor(copy / 2);
+    if (copy % 2 === 1) {
+      ones++;
+    }
+    // copy % 2 === 1 && ones++;
+    copy = Math.floor(copy / 2);
   }
   return ones;
 };

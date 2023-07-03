@@ -30,12 +30,16 @@ Constraints:
  * @param {number} num
  * @return {boolean}
  */
-var checkPerfectNumber = function(num) {
-  if (num === 1) { return false; }
+var checkPerfectNumber = function (num) {
+  if (num === 1) {
+    return false;
+  }
   let r = 1;
 
   for (let i = 2; i < num; i++) {
-      if (num % i === 0) { r += i; }
+    if (num % i === 0) {
+      r += i;
+    }
   }
 
   return r === num;

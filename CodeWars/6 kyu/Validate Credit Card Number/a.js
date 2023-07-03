@@ -29,15 +29,15 @@ Finally, take that sum and divide it by 10. If the remainder equals zero, the or
 
 18 (modulus) 10 ==> 8 , which is not equal to 0, so this is not a valid credit card number
  */
-function validate(n){
+function validate(n) {
   let nr = String(n);
   let sum = 0;
   let num_digits = nr.length;
   let oddeven = num_digits & 1;
-  
+
   for (let i = 0; i < num_digits; i++) {
-    let digit = parseInt(nr[i])
-    if (!(( i & 1 ) ^ oddeven)) {
+    let digit = parseInt(nr[i]);
+    if (!((i & 1) ^ oddeven)) {
       digit = digit * 2;
     }
 
@@ -48,5 +48,5 @@ function validate(n){
     sum = sum + digit;
   }
 
-  return ((sum % 10) === 0);
+  return sum % 10 === 0;
 }

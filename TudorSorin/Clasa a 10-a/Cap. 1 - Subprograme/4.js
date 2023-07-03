@@ -7,11 +7,11 @@ function four(n) {
 
   while (n > 0) {
     const d = n % 10;
-    r += (d * d * d);
+    r += d * d * d;
     n = Math.floor(n / 10);
   }
   console.log(original, r);
 }
 
 // four(133);
-four(55)
+four(55);

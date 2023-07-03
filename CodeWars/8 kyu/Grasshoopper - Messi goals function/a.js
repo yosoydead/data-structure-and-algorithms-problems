@@ -13,7 +13,7 @@ For example:
 
 5, 10, 2  -->  17
  */
-function goals (laLigaGoals, copaDelReyGoals, championsLeagueGoals) {
+function goals(laLigaGoals, copaDelReyGoals, championsLeagueGoals) {
   // code goes he
   return laLigaGoals + copaDelReyGoals + championsLeagueGoals;
 }

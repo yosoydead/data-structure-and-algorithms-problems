@@ -8,7 +8,7 @@ Examples
 
 "The_Stealth-Warrior" gets converted to "TheStealthWarrior"
  */
-function toCamelCase(str){
+function toCamelCase(str) {
   const a = str.replaceAll("-", " ").replaceAll("_", " ").split(" ");
   for (let i = 1; i < a.length; i++) {
     const x = a[i][0].toUpperCase();

@@ -36,13 +36,15 @@ num does not contain 0 as one of its digits.
  * @param {number} num
  * @return {number}
  */
-var countDigits = function(num) {
+var countDigits = function (num) {
   let copy = num;
   let r = 0;
   while (copy > 0) {
-      const d = copy % 10;
-      if (num % d === 0) { r++; }
-      copy = Math.floor(copy / 10);
+    const d = copy % 10;
+    if (num % d === 0) {
+      r++;
+    }
+    copy = Math.floor(copy / 10);
   }
 
   return r;

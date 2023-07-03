@@ -14,9 +14,11 @@ function twoSum(numbers, target) {
   const seen = {};
   const res = Array(2);
 
-  for(let i = 0; i < numbers.length; i++) {
+  for (let i = 0; i < numbers.length; i++) {
     for (let j = i + 1; j < numbers.length; j++) {
-      if (numbers[i] + numbers[j] === target) { return [i, j]; }
+      if (numbers[i] + numbers[j] === target) {
+        return [i, j];
+      }
     }
   }
   return res;

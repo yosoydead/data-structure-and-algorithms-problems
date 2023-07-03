@@ -37,9 +37,11 @@ The list is guaranteed to be sorted in ascending order.
  * @param {ListNode} head
  * @return {ListNode}
  */
-var deleteDuplicates = function(head) {
+var deleteDuplicates = function (head) {
   // let copy = head.next;
-  if (!head) { return null; }
+  if (!head) {
+    return null;
+  }
   const result = new ListNode();
   result.val = head.val;
   head = head.next;
@@ -47,12 +49,12 @@ var deleteDuplicates = function(head) {
   // console.log(result);
 
   while (head) {
-      if (head.val !== h.val) {
-          const newNode = new ListNode(head.val);
-          h.next = newNode;
-          h = h.next;
-      }
-      head = head.next;
+    if (head.val !== h.val) {
+      const newNode = new ListNode(head.val);
+      h.next = newNode;
+      h = h.next;
+    }
+    head = head.next;
   }
 
   return result;

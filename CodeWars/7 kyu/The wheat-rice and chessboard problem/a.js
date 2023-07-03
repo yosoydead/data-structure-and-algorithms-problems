@@ -13,24 +13,28 @@ squaresNeeded(3) === 2
 squaresNeeded(4) === 3
 Input is always going to be valid/reasonable: ie: a non negative number; extra cookie for not using a loop to compute square-by-square (at least not directly) and instead trying a smarter approach [hint: some peculiar operator]; a trick converting the number might also work: impress me!
  */
-function squaresNeeded(grains){
+function squaresNeeded(grains) {
   //your code here
-  if(grains === 0){
+  if (grains === 0) {
     return 0;
   }
-  if(grains === 1){ return 1;}
-  if(grains === 2){ return 2;}
-  
+  if (grains === 1) {
+    return 1;
+  }
+  if (grains === 2) {
+    return 2;
+  }
+
   return calc(grains);
 }
 
-function calc(numOfGrains){
- let pow = 0;
+function calc(numOfGrains) {
+  let pow = 0;
   let a = 2;
-  let total  = 0;
-  
-  while(total < numOfGrains){
-    total += Math.pow(a,pow);
+  let total = 0;
+
+  while (total < numOfGrains) {
+    total += Math.pow(a, pow);
     pow++;
   }
   return pow;

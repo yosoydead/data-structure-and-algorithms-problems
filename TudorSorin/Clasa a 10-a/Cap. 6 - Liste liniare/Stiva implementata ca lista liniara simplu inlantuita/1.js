@@ -47,7 +47,7 @@ class Stack {
     let cur = this.head;
 
     while (cur.next) {
-     prev = cur;
+      prev = cur;
       cur = cur.next;
     }
 
@@ -63,4 +63,4 @@ stack.push(2);
 stack.push(3);
 stack.peek();
 stack.changeLast(4);
-stack.pop(); 
+stack.pop();

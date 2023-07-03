@@ -34,14 +34,14 @@ s and t consist of lowercase English letters.
  * @param {string} t
  * @return {character}
  */
-var findTheDifference = function(s, t) {
+var findTheDifference = function (s, t) {
   let x = 0;
   for (let i in s) {
-      x += s.charCodeAt(i);
+    x += s.charCodeAt(i);
   }
 
   for (let i = 0; i < t.length; i++) {
-      x -= t.charCodeAt(i);
+    x -= t.charCodeAt(i);
   }
 
   return String.fromCharCode(Math.abs(x));

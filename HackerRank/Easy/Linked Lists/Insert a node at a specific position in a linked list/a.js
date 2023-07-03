@@ -52,16 +52,16 @@ function insertNodeAtPosition(llist, data, position) {
   let i = 0;
   let c = llist;
   let prev = null;
-  
+
   while (i < position) {
-      i++;
-      prev = c;
-      c = c.next;
+    i++;
+    prev = c;
+    c = c.next;
   }
-  
+
   const n = new SinglyLinkedListNode(data);
   n.next = c;
   prev.next = n;
-  
+
   return llist;
 }

@@ -53,19 +53,25 @@ There are  positive numbers,  negative numbers, and  zero in the array.
 The proportions of occurrence are positive: , negative:  and zeros: .
  */
 function plusMinus(arr) {
-    // Write your code here
-    let one = 0;
-    let zero = 0;
-    let minus = 0;
-    
-    for (let i = 0; i < arr.length; i++) {
-        const el = arr[i];
-        if (el > 0) { one++; }
-        if (el < 0) { minus++; }
-        if (el === 0) { zero++; }
+  // Write your code here
+  let one = 0;
+  let zero = 0;
+  let minus = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    const el = arr[i];
+    if (el > 0) {
+      one++;
     }
-    
-    console.log((one / arr.length).toFixed(6));
-    console.log((minus / arr.length).toFixed(6));
-    console.log((zero / arr.length).toFixed(6));
+    if (el < 0) {
+      minus++;
+    }
+    if (el === 0) {
+      zero++;
+    }
+  }
+
+  console.log((one / arr.length).toFixed(6));
+  console.log((minus / arr.length).toFixed(6));
+  console.log((zero / arr.length).toFixed(6));
 }

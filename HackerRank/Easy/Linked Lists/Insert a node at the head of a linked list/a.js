@@ -42,7 +42,7 @@ After inserting 975, the list is 975 -> 392 -> 484 -> 383 -> NULL.
 After inserting 321, the list is 321 -> 975 -> 392 -> 484 -> 383 -> NULL.
  */
 function insertNodeAtHead(head, data) {
-    const n = new SinglyLinkedListNode(data);
-    n.next = head;
-    return n;
+  const n = new SinglyLinkedListNode(data);
+  n.next = head;
+  return n;
 }

@@ -6,15 +6,20 @@ Examples
 pigIt('Pig latin is cool'); // igPay atinlay siay oolcay
 pigIt('Hello world !');     // elloHay orldway !
  */
-function pigIt(str){
+function pigIt(str) {
   //Code here
   const punct = ["!", ",", ".", ";", ":", "?"];
 
-  return str.split(" ").map(el => {
-    if (punct.includes(el)) { return el; }
+  return str
+    .split(" ")
+    .map((el) => {
+      if (punct.includes(el)) {
+        return el;
+      }
 
-    const letter = el[0];
-    const sub = el.substring(1, el.length);
-    return `${sub}${letter}ay`;
-  }).join(" ");
+      const letter = el[0];
+      const sub = el.substring(1, el.length);
+      return `${sub}${letter}ay`;
+    })
+    .join(" ");
 }

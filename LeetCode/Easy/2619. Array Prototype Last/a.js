@@ -24,12 +24,14 @@ Constraints:
 0 <= arr.length <= 1000
 0 <= arr[i] <= 1000
  */
-Array.prototype.last = function() {
-  if (this.length === 0) { return -1; }
+Array.prototype.last = function () {
+  if (this.length === 0) {
+    return -1;
+  }
   return this[this.length - 1];
 };
 
 /**
-* const arr = [1, 2, 3];
-* arr.last(); // 3
-*/
+ * const arr = [1, 2, 3];
+ * arr.last(); // 3
+ */

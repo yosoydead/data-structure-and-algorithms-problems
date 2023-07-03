@@ -17,9 +17,9 @@ l.push(6);
 function x(l) {
   let r = 0;
 
-  while(l) {
+  while (l) {
     // r += ((r * 10) + l.val);
-    r = (r * 10) + l.val;
+    r = r * 10 + l.val;
     l = l.next;
   }
 
