@@ -57,10 +57,12 @@ Acceptance Rate
  * @param {ListNode} head
  * @return {number[][]}
  */
-var spiralMatrix = function(row, col, head) {
-  const arr = Array.from({length: row}, () => Array.from({length: col}, () => -1));
+var spiralMatrix = function (row, col, head) {
+  const arr = Array.from({ length: row }, () => Array.from({ length: col }, () => -1));
   let c = head;
-  let i, startRow = 0, startCol = 0;
+  let i,
+    startRow = 0,
+    startCol = 0;
   let m = arr.length;
   let n = arr[0].length;
   /*
@@ -72,41 +74,49 @@ var spiralMatrix = function(row, col, head) {
   */
 
   while (c && startRow < m && startCol < n) {
-      // print the first row from the remaining rows
-      for (i = startCol; i < n; ++i) {
-          if (!c) { break; }
-          arr[startRow][i] = c.val;
-          c = c.next;
+    // print the first row from the remaining rows
+    for (i = startCol; i < n; ++i) {
+      if (!c) {
+        break;
       }
-      startRow++;
+      arr[startRow][i] = c.val;
+      c = c.next;
+    }
+    startRow++;
 
-      // print the last column from the remaining columns
-      for (i = startRow; i < m; ++i) {
-          if (!c) { break; }
-          arr[i][n-1] = c.val;
-          c = c.next;
+    // print the last column from the remaining columns
+    for (i = startRow; i < m; ++i) {
+      if (!c) {
+        break;
       }
-      n--;
+      arr[i][n - 1] = c.val;
+      c = c.next;
+    }
+    n--;
 
-      // print the last row from the remaining rows
-      if (startRow < m) {
-          for (i = n - 1; i >= startCol; --i) {
-              if (!c) { break; }
-              arr[m-1][i] = c.val;
-              c = c.next;
-          }
-          m--;
+    // print the last row from the remaining rows
+    if (startRow < m) {
+      for (i = n - 1; i >= startCol; --i) {
+        if (!c) {
+          break;
+        }
+        arr[m - 1][i] = c.val;
+        c = c.next;
       }
+      m--;
+    }
 
-      // print the first column from the remaining columns
-      if (startCol < n) {
-          for (i = m - 1; i >= startRow; --i) {
-              if (!c) { break; }
-              arr[i][startCol] = c.val;
-              c = c.next;
-          }
-          startCol++;
+    // print the first column from the remaining columns
+    if (startCol < n) {
+      for (i = m - 1; i >= startRow; --i) {
+        if (!c) {
+          break;
+        }
+        arr[i][startCol] = c.val;
+        c = c.next;
       }
+      startCol++;
+    }
   }
 
   return arr;
