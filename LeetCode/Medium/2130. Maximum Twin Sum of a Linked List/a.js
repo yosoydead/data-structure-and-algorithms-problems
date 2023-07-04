@@ -64,11 +64,11 @@ Acceptance Rate
  * @param {ListNode} head
  * @return {number}
  */
-var pairSum = function(head) {
+var pairSum = function (head) {
   const arr = [];
   while (head) {
-      arr.push(head.val);
-      head = head.next;
+    arr.push(head.val);
+    head = head.next;
   }
 
   let i = 0;
@@ -76,11 +76,11 @@ var pairSum = function(head) {
   let sum = -99999;
 
   while (i < j) {
-      if (arr[i] + arr[j] > sum) {
-          sum = arr[i] + arr[j];
-      }
-      j--;
-      i++;
+    if (arr[i] + arr[j] > sum) {
+      sum = arr[i] + arr[j];
+    }
+    j--;
+    i++;
   }
 
   return sum;
