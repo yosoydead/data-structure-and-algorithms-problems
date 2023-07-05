@@ -58,25 +58,28 @@ Acceptance Rate
  * @param {ListNode} head
  * @return {ListNode}
  */
-var mergeNodes = function(head) {
+var mergeNodes = function (head) {
   let lead = head;
   let c = lead.next;
   let prev = null;
   let sum = 0;
 
   while (true) {
-      if (!c) { prev.next = null; break; }
-      if (c.val === 0) {
-          prev = lead;
-          lead.val = sum;
-          lead.next = c;
-          lead = c;
-          c = c.next;
-          sum = 0;
-          continue;
-      }
-      sum += c.val;
+    if (!c) {
+      prev.next = null;
+      break;
+    }
+    if (c.val === 0) {
+      prev = lead;
+      lead.val = sum;
+      lead.next = c;
+      lead = c;
       c = c.next;
+      sum = 0;
+      continue;
+    }
+    sum += c.val;
+    c = c.next;
   }
 
   return head;

@@ -51,31 +51,35 @@ Acceptance Rate
  * @param {ListNode} head
  * @return {ListNode}
  */
-var reverseList = function(head) {
-  if (!head) { return null; }
-  if(!head.next) { return head; }
+var reverseList = function (head) {
+  if (!head) {
+    return null;
+  }
+  if (!head.next) {
+    return head;
+  }
 
   let prev = null;
   let c = head;
   let iter = c;
 
   while (c.next) {
-      let p = null;
-      while (iter.next) {
-          p = iter;
-          iter = iter.next;
-      }
+    let p = null;
+    while (iter.next) {
+      p = iter;
+      iter = iter.next;
+    }
 
-      p.next = null;
-      if (!prev) {
-          iter.next = c;
-          head = iter;
-      } else {
-          const next = prev.next;
-          iter.next = next;
-          prev.next = iter;
-      }
-      prev = iter;
+    p.next = null;
+    if (!prev) {
+      iter.next = c;
+      head = iter;
+    } else {
+      const next = prev.next;
+      iter.next = next;
+      prev.next = iter;
+    }
+    prev = iter;
   }
 
   return head;
