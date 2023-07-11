@@ -55,10 +55,10 @@ Acceptance Rate
  * @param {ListNode} list2
  * @return {ListNode}
  */
-var mergeInBetween = function(l1, a, b, l2) {
+var mergeInBetween = function (l1, a, b, l2) {
   let cc = l2;
   while (cc.next) {
-      cc = cc.next;
+    cc = cc.next;
   }
 
   let i = 0;
@@ -67,15 +67,15 @@ var mergeInBetween = function(l1, a, b, l2) {
   let right = null;
 
   while (c) {
-      if (i === a-1) {
-          left = c;
-      }
-      if (i === b+1) {
-          right = c;
-      }
+    if (i === a - 1) {
+      left = c;
+    }
+    if (i === b + 1) {
+      right = c;
+    }
 
-      i++;
-      c = c.next;
+    i++;
+    c = c.next;
   }
   left.next = l2;
   cc.next = right;

@@ -4,7 +4,7 @@
 function transform(n, k) {
   const rest = n % k;
   if (n >= k) {
-    transform(Math.floor(n/k), k);
+    transform(Math.floor(n / k), k);
   }
 
   console.log(rest);

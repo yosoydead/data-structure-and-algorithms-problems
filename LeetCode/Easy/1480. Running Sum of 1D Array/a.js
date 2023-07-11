@@ -41,12 +41,12 @@ Acceptance Rate
  * @param {number[]} nums
  * @return {number[]}
  */
-var runningSum = function(nums) {
+var runningSum = function (nums) {
   const sumsByIndex = {};
   sumsByIndex[0] = nums[0];
 
-  for(let i = 1; i < nums.length; i++) {
-      sumsByIndex[i] = sumsByIndex[i-1] + nums[i];
+  for (let i = 1; i < nums.length; i++) {
+    sumsByIndex[i] = sumsByIndex[i - 1] + nums[i];
   }
 
   return Object.values(sumsByIndex);

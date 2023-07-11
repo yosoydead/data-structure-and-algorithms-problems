@@ -59,34 +59,36 @@ Acceptance Rate
 /**
  * @param {ListNode} head
  */
-var Solution = function(head) {
+var Solution = function (head) {
   this.length = 0;
   let c = head;
   while (c) {
-      this.length++;
-      c = c.next;
+    this.length++;
+    c = c.next;
   }
   this.perc = Math.round(100 / this.length);
   this.head = head;
 };
 
 /**
-* @return {number}
-*/
-Solution.prototype.getRandom = function() {
-  if (!this.head.next) { return this.head.val; }
+ * @return {number}
+ */
+Solution.prototype.getRandom = function () {
+  if (!this.head.next) {
+    return this.head.val;
+  }
   const r = Math.floor(Math.random() * (this.length - 1 + 1) + 1);
   let acc = r * this.perc;
   let c = this.head;
   while (acc < 100 && c.next) {
-      c = c.next;
-      acc += this.perc;
+    c = c.next;
+    acc += this.perc;
   }
   return c.val;
 };
 
-/** 
-* Your Solution object will be instantiated and called as such:
-* var obj = new Solution(head)
-* var param_1 = obj.getRandom()
-*/
+/**
+ * Your Solution object will be instantiated and called as such:
+ * var obj = new Solution(head)
+ * var param_1 = obj.getRandom()
+ */

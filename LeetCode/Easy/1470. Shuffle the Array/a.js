@@ -42,13 +42,13 @@ Acceptance Rate
  * @param {number} n
  * @return {number[]}
  */
-var shuffle = function(nums, n) {
+var shuffle = function (nums, n) {
   let half = n;
   const result = [];
   for (let i = 0; i < n; i++) {
-      result.push(nums[i]);
-      result.push(nums[half]);
-      half++;
+    result.push(nums[i]);
+    result.push(nums[half]);
+    half++;
   }
 
   return result;
