@@ -2,7 +2,9 @@
  * Sa se scrie o functie recursiva pentru a calcula suma cifrelor unui numar natural.
  */
 function x(n, total) {
-  if (n === 0) { return total; }
+  if (n === 0) {
+    return total;
+  }
   total += n % 10;
 
   return x(Math.floor(n / 10), total);

@@ -5,7 +5,7 @@
 function exemplu(n) {
   if (n > 0) {
     console.log("n", n);
-    exemplu(n-1);
+    exemplu(n - 1);
   }
 }
 
@@ -13,13 +13,13 @@ exemplu(5);
 
 /**
  * In cazul functiilor care nu sunt de tip VOID, autoapelul se realizeaza prin instructiunea RETURN.
- * Ea este de forma RETURN EXPRESIE, dar in expresia respectiva trebuie sa intre si functia care 
+ * Ea este de forma RETURN EXPRESIE, dar in expresia respectiva trebuie sa intre si functia care
  * se autoapeleaza
  */
 
-function sum (n) {
+function sum(n) {
   if (n !== 0) {
-    return n + sum(n-1);
+    return n + sum(n - 1);
   }
   return n;
 }
