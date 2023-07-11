@@ -1,0 +1,15 @@
+* O gandire recursiva exprima concentrat o anumita stare care se repeta la infinit. Aceasta gandire
+se aplica in elaborarea algoritmilor recursivi, dar cu o modificare esentiala: adaugarea
+conditiei de terminare. In absenta acestei conditii, nu poate fi vorba de algoritm, intrucat
+algoritmul trebuie sa fie finit.
+
+- In elaborarea algoritmilor recursivi se aplica rationamentul: ce se intampla la un nivel, se intampla la orice nivel
+- Subprogramul care se autoapeleaza trebuie sa contina instructiunile corespunsatoare unui nivel
+- Starea tratata de subprogram se gaseste pe un anumit nivel al stivei (variabilele rezultate in urma transmiterii
+parametrilor si variabilele locale ale subprogramului)
+
+* Observatii:
+1. Un algoritm recursiv se elaboreaza utilizand acest tip de gandire, nu o gandire precum cea folosita pana acum
+cand am elaborat algoritmi iterativi
+2. Pentru orice algoritm recursiv exista unul iterativ care rezolva aceeasi problema
+3. Nu intotdeauna alegerea unui algoritm recursiv reprezinta un avantaj
