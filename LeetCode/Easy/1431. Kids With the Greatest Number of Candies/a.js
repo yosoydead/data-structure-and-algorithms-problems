@@ -46,16 +46,21 @@ n == candies.length
  * @param {number} extraCandies
  * @return {boolean[]}
  */
-var kidsWithCandies = function(candies, extraCandies) {
+var kidsWithCandies = function (candies, extraCandies) {
   let biggest = -999999;
   for (let i = 0; i < candies.length; i++) {
-      if (candies[i] > biggest) { biggest = candies[i]; }
+    if (candies[i] > biggest) {
+      biggest = candies[i];
+    }
   }
 
   const res = Array(candies.length);
   for (let i = 0; i < candies.length; i++) {
-      if (candies[i] + extraCandies >= biggest) { res[i] = true; }
-      else { res[i] = false; }
+    if (candies[i] + extraCandies >= biggest) {
+      res[i] = true;
+    } else {
+      res[i] = false;
+    }
   }
   return res;
 };

@@ -41,10 +41,10 @@ Follow-up: Can you solve it without using an extra space (i.e., O(1) memory)?
  * @param {number[]} nums
  * @return {number[]}
  */
-var buildArray = function(nums) {
-    const result = Array(nums.length);
-    for (let i = 0; i < nums.length; i++) {
-        result[i] = nums[nums[i]];
-    }
-    return result;
+var buildArray = function (nums) {
+  const result = Array(nums.length);
+  for (let i = 0; i < nums.length; i++) {
+    result[i] = nums[nums[i]];
+  }
+  return result;
 };

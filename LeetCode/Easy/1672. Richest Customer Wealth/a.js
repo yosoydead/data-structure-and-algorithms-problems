@@ -50,16 +50,18 @@ Acceptance Rate
  * @param {number[][]} accounts
  * @return {number}
  */
-var maximumWealth = function(accounts) {
+var maximumWealth = function (accounts) {
   let res = -9999;
   let sum = 0;
   for (let i = 0; i < accounts.length; i++) {
-      for (let j = 0; j < accounts[i].length; j++) {
-          sum += accounts[i][j];
-      }
+    for (let j = 0; j < accounts[i].length; j++) {
+      sum += accounts[i][j];
+    }
 
-      if (sum > res) { res = sum; }
-      sum = 0;
+    if (sum > res) {
+      res = sum;
+    }
+    sum = 0;
   }
   return res;
 };

@@ -45,26 +45,26 @@ Acceptance Rate
  * @param {number[]} nums
  * @return {number[]}
  */
-var leftRightDifference = function(nums) {
+var leftRightDifference = function (nums) {
   const ans = Array(nums.length).fill(0);
 
   let left = 0;
   let right = 0;
 
   for (let i = 0; i < nums.length; i++) {
-      // left sum
-      for (let j = 0; j < i; j++) {
-          left += nums[j];
-      }
+    // left sum
+    for (let j = 0; j < i; j++) {
+      left += nums[j];
+    }
 
-      //right sum
-      for (let j = i + 1; j < nums.length; j++) {
-          right += nums[j];
-      }
+    //right sum
+    for (let j = i + 1; j < nums.length; j++) {
+      right += nums[j];
+    }
 
-      ans[i] = Math.abs (left - right);
-      left = 0;
-      right = 0;
+    ans[i] = Math.abs(left - right);
+    left = 0;
+    right = 0;
   }
   return ans;
 };

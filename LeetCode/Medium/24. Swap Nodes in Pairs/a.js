@@ -45,21 +45,25 @@ Acceptance Rate
  * @param {ListNode} head
  * @return {ListNode}
  */
-var swapPairs = function(head) {
-  if (!head) { return null; }
-  if (!head.next) { return head; }
+var swapPairs = function (head) {
+  if (!head) {
+    return null;
+  }
+  if (!head.next) {
+    return head;
+  }
 
   let c = head;
 
-while (c && c.next) {
-  const n = c.next.next;
-  const next = c.next.val;
-  const t = c.val;
+  while (c && c.next) {
+    const n = c.next.next;
+    const next = c.next.val;
+    const t = c.val;
 
-  c.val = next;
-  c.next.val = t;
-  c = n;
-}
+    c.val = next;
+    c.next.val = t;
+    c = n;
+  }
 
-return head;
+  return head;
 };
