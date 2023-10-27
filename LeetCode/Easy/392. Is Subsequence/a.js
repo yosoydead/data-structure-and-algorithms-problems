@@ -38,18 +38,18 @@ Acceptance Rate
  * @param {string} t
  * @return {boolean}
  */
-var isSubsequence = function(s, t) {
+var isSubsequence = function (s, t) {
   if (s.length > t.length) {
-      return false;
+    return false;
   }
   let sliceStart = 0;
 
   for (let i = 0; i < s.length; i++) {
-      const pos = t.substring(sliceStart, t.length).indexOf(s[i]);
-      if (pos < 0) {
-          return false;
-      }
-      sliceStart += (pos + 1);
+    const pos = t.substring(sliceStart, t.length).indexOf(s[i]);
+    if (pos < 0) {
+      return false;
+    }
+    sliceStart += pos + 1;
   }
   return true;
 };
