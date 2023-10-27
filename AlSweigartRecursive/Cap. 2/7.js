@@ -4,7 +4,7 @@ returns 6 (2+4), etc. */
 function sumPow2Iter(n) {
   let res = 0;
   for (let i = 1; i <= n; i++) {
-    res += (Math.pow(2, i));
+    res += Math.pow(2, i);
   }
 
   return res;
@@ -21,7 +21,7 @@ function sumPow2Recursive(n, total = 0) {
   // const x = sumPow2Recursive(n-1) + Math.pow(2, n);
   // total += Math.pow(2, n);
   // console.log(total);
-  total += (Math.pow(2, n));
+  total += Math.pow(2, n);
   sumPow2Recursive(n - 1, total);
 }
 
