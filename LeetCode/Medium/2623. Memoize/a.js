@@ -79,26 +79,25 @@ Acceptance Rate
  */
 function memoize(fn) {
   const memo = {};
-  return function(...args) {
-      const str = args.join(",");
-      console.log("str", str)
-      if (!(str in memo)) {
-          const res = fn(...args);
-          memo[str] = res;
-          return res;
-      }
-      return memo[str];
-  }
+  return function (...args) {
+    const str = args.join(",");
+    console.log("str", str);
+    if (!(str in memo)) {
+      const res = fn(...args);
+      memo[str] = res;
+      return res;
+    }
+    return memo[str];
+  };
 }
 
-
-/** 
-* let callCount = 0;
-* const memoizedFn = memoize(function (a, b) {
-*	 callCount += 1;
-*   return a + b;
-* })
-* memoizedFn(2, 3) // 5
-* memoizedFn(2, 3) // 5
-* console.log(callCount) // 1 
-*/
+/**
+ * let callCount = 0;
+ * const memoizedFn = memoize(function (a, b) {
+ *	 callCount += 1;
+ *   return a + b;
+ * })
+ * memoizedFn(2, 3) // 5
+ * memoizedFn(2, 3) // 5
+ * console.log(callCount) // 1
+ */

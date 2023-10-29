@@ -32,14 +32,13 @@ promise1 and promise2 are promises that resolve with a number
  * @param {Promise} promise2
  * @return {Promise}
  */
-var addTwoPromises = async function(promise1, promise2) {
-  return Promise.all([promise1, promise2])
-      .then(vals => {
-          return vals[0] + vals[1];
-      })
+var addTwoPromises = async function (promise1, promise2) {
+  return Promise.all([promise1, promise2]).then((vals) => {
+    return vals[0] + vals[1];
+  });
 };
 
 /**
-* addTwoPromises(Promise.resolve(2), Promise.resolve(2))
-*   .then(console.log); // 4
-*/
+ * addTwoPromises(Promise.resolve(2), Promise.resolve(2))
+ *   .then(console.log); // 4
+ */

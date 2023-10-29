@@ -57,35 +57,35 @@ Acceptance Rate
  * @param {number[]} nums
  * @return {number}
  */
-var removeDuplicates = function(arr) {
+var removeDuplicates = function (arr) {
   let searchFrom = 0;
   let stoppedAt = 0;
   const x = (fromIndex) => {
-      const items = [];
-      for (let i = fromIndex; i < arr.length; i++) {
-          const val = arr[i];
-          items.push(val);
-          arr[i] = '-';
-          if (val !== arr[i+1]) {
-              break;
-          }
+    const items = [];
+    for (let i = fromIndex; i < arr.length; i++) {
+      const val = arr[i];
+      items.push(val);
+      arr[i] = "-";
+      if (val !== arr[i + 1]) {
+        break;
       }
+    }
 
-      return items;
+    return items;
   };
 
   // for (let i = 0; i < arr.length; i++) {
   while (searchFrom < arr.length) {
-      const a = x(searchFrom);
-      for (let j = 0; j < a.length; j++) {
-          if (j < 2) {
-          arr[stoppedAt] = a[j];
-          stoppedAt++;
-          } else {
-          break;
-          }
+    const a = x(searchFrom);
+    for (let j = 0; j < a.length; j++) {
+      if (j < 2) {
+        arr[stoppedAt] = a[j];
+        stoppedAt++;
+      } else {
+        break;
       }
-      searchFrom += a.length;
+    }
+    searchFrom += a.length;
   }
 
   return stoppedAt;

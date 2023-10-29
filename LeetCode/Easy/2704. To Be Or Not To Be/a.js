@@ -30,26 +30,26 @@ Explanation: 5 !== null so this expression returns true.
  * @param {string} val
  * @return {Object}
  */
-var expect = function(val) {
+var expect = function (val) {
   function toBe(v) {
-      if (v === val) {
-          return true
-      }
-      throw new Error("Not Equal");
+    if (v === val) {
+      return true;
+    }
+    throw new Error("Not Equal");
   }
   function notToBe(v) {
-      if (v !== val) {
-          return true
-      }
-      throw new Error("Equal");
+    if (v !== val) {
+      return true;
+    }
+    throw new Error("Equal");
   }
   return {
-      toBe,
-      notToBe
+    toBe,
+    notToBe,
   };
 };
 
 /**
-* expect(5).toBe(5); // true
-* expect(5).notToBe(5); // throws "Equal"
-*/
+ * expect(5).toBe(5); // true
+ * expect(5).notToBe(5); // throws "Equal"
+ */
