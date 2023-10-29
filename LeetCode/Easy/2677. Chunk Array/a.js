@@ -51,19 +51,19 @@ Acceptance Rate
  * @param {number} size
  * @return {Array}
  */
-var chunk = function(arr, size) {
+var chunk = function (arr, size) {
   if (arr.length === 0) {
-      return arr;
+    return arr;
   }
 
   if (size >= arr.length) {
-      return [arr];
+    return [arr];
   }
 
   const result = [];
   for (let i = 0; i < arr.length; i += size) {
-      console.log("i,", i, arr.slice(i, size))
-      result.push(arr.slice(i, size+i));
+    console.log("i,", i, arr.slice(i, size));
+    result.push(arr.slice(i, size + i));
   }
 
   return result;

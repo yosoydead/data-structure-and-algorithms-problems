@@ -84,23 +84,23 @@ Acceptance Rate
  * @param {number} t milliseconds
  * @return {Function}
  */
-var debounce = function(fn, t) {
+var debounce = function (fn, t) {
   let i = null;
-  return function(...args) {
-      if (i) {
-          clearTimeout(i);
-      }
-      const id = setTimeout(() => {
-          fn(...args);
-          i = null;
-      }, t);
-      i = id;
-  }
+  return function (...args) {
+    if (i) {
+      clearTimeout(i);
+    }
+    const id = setTimeout(() => {
+      fn(...args);
+      i = null;
+    }, t);
+    i = id;
+  };
 };
 
 /**
-* const log = debounce(console.log, 100);
-* log('Hello'); // cancelled
-* log('Hello'); // cancelled
-* log('Hello'); // Logged at t=100ms
-*/
+ * const log = debounce(console.log, 100);
+ * log('Hello'); // cancelled
+ * log('Hello'); // cancelled
+ * log('Hello'); // Logged at t=100ms
+ */

@@ -82,23 +82,23 @@ Acceptance Rate
  * @param {Array} arr2
  * @return {Array}
  */
-var join = function(arr1, arr2) {
+var join = function (arr1, arr2) {
   const ids = {};
   const result = [];
 
   for (let i = 0; i < arr1.length; i++) {
-      result.push(arr1[i]);
-      ids[arr1[i].id] = arr1[i];
+    result.push(arr1[i]);
+    ids[arr1[i].id] = arr1[i];
   }
 
   for (let i = 0; i < arr2.length; i++) {
-      if (!ids[arr2[i].id]) {
-          result.push(arr2[i]);
-      } else {
-          const obj = ids[arr2[i].id];
-          Object.assign(obj, arr2[i]);
-      }
+    if (!ids[arr2[i].id]) {
+      result.push(arr2[i]);
+    } else {
+      const obj = ids[arr2[i].id];
+      Object.assign(obj, arr2[i]);
+    }
   }
-  result.sort((a,b) => a.id - b.id);
+  result.sort((a, b) => a.id - b.id);
   return result;
 };

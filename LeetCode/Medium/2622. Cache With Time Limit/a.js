@@ -66,59 +66,59 @@ Acceptance Rate
 75.5%
  */
 
-var TimeLimitedCache = function() {
+var TimeLimitedCache = function () {
   this.map = new Map();
   this.timeoutIds = new Map();
 };
 
-/** 
-* @param {number} key
-* @param {number} value
-* @param {number} duration time until expiration in ms
-* @return {boolean} if un-expired key already existed
-*/
-TimeLimitedCache.prototype.set = function(key, value, duration) {
+/**
+ * @param {number} key
+ * @param {number} value
+ * @param {number} duration time until expiration in ms
+ * @return {boolean} if un-expired key already existed
+ */
+TimeLimitedCache.prototype.set = function (key, value, duration) {
   // console.log("set", this.map)
   if (this.map.has(key)) {
-      clearTimeout(this.timeoutIds.get(key));
-      this.map.set(key, value);
-      const id = setTimeout(() => {
+    clearTimeout(this.timeoutIds.get(key));
+    this.map.set(key, value);
+    const id = setTimeout(() => {
       this.timeoutIds.delete(key);
-          this.map.delete(key);
-      }, duration);
-      this.timeoutIds.set(key, id);
-      return true;
+      this.map.delete(key);
+    }, duration);
+    this.timeoutIds.set(key, id);
+    return true;
   }
   this.map.set(key, value);
   const id = setTimeout(() => {
-      this.timeoutIds.delete(key);
-      this.map.delete(key);
+    this.timeoutIds.delete(key);
+    this.map.delete(key);
   }, duration);
   this.timeoutIds.set(key, id);
   return false;
 };
 
-/** 
-* @param {number} key
-* @return {number} value associated with key
-*/
-TimeLimitedCache.prototype.get = function(key) {
+/**
+ * @param {number} key
+ * @return {number} value associated with key
+ */
+TimeLimitedCache.prototype.get = function (key) {
   if (this.map.has(key)) {
-      return this.map.get(key);
+    return this.map.get(key);
   }
   return -1;
 };
 
-/** 
-* @return {number} count of non-expired keys
-*/
-TimeLimitedCache.prototype.count = function() {
+/**
+ * @return {number} count of non-expired keys
+ */
+TimeLimitedCache.prototype.count = function () {
   return this.map.size;
 };
 
 /**
-* const timeLimitedCache = new TimeLimitedCache()
-* timeLimitedCache.set(1, 42, 1000); // false
-* timeLimitedCache.get(1) // 42
-* timeLimitedCache.count() // 1
-*/
+ * const timeLimitedCache = new TimeLimitedCache()
+ * timeLimitedCache.set(1, 42, 1000); // false
+ * timeLimitedCache.get(1) // 42
+ * timeLimitedCache.count() // 1
+ */
