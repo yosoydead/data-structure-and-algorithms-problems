@@ -60,27 +60,27 @@ Acceptance Rate
  * @param {Array<Function>} functions
  * @return {Promise<any>}
  */
-var promiseAll = function(functions) {
+var promiseAll = function (functions) {
   return new Promise((res, rej) => {
-      let num = 0;
-      const results = new Array(functions.length).fill(undefined);
-      for (let i = 0; i < functions.length; i++) {
-          functions[i]()
-              .then((v) => {
-                  results[i] = v;
-                  num++;
-                  if (num === functions.length) {
-                      res(results);
-                  }
-              })
-              .catch(e => {
-                  rej("Error");
-              })
-      }
+    let num = 0;
+    const results = new Array(functions.length).fill(undefined);
+    for (let i = 0; i < functions.length; i++) {
+      functions[i]()
+        .then((v) => {
+          results[i] = v;
+          num++;
+          if (num === functions.length) {
+            res(results);
+          }
+        })
+        .catch((e) => {
+          rej("Error");
+        });
+    }
   });
 };
 
 /**
-* const promise = promiseAll([() => new Promise(res => res(42))])
-* promise.then(console.log); // [42]
-*/
+ * const promise = promiseAll([() => new Promise(res => res(42))])
+ * promise.then(console.log); // [42]
+ */

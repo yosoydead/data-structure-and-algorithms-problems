@@ -44,8 +44,8 @@ Acceptance Rate
  * @param {Function} fn
  * @return {Array}
  */
-var sortBy = function(arr, fn) {
+var sortBy = function (arr, fn) {
   const copy = [...arr];
 
-  return copy.sort((a,b) => fn(a) - fn(b));
+  return copy.sort((a, b) => fn(a) - fn(b));
 };
