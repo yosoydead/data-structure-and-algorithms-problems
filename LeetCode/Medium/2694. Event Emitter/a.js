@@ -83,57 +83,56 @@ Acceptance Rate
  */
 class EventEmitter {
   constructor() {
-      this.events = {};
+    this.events = {};
   }
   /**
    * @param {string} eventName
    * @param {Function} callback
    * @return {Object}
    */
-subscribe(eventName, callback) {
-      if (!this.events[eventName]) {
-          this.events[eventName] = [callback];
-      } else {
-          this.events[eventName].push(callback);
-      }
-  return {
-    unsubscribe: () => {
-      const arr = this.events[eventName].filter((fn) => fn !== callback);
-              this.events[eventName] = arr;
-              return undefined;
+  subscribe(eventName, callback) {
+    if (!this.events[eventName]) {
+      this.events[eventName] = [callback];
+    } else {
+      this.events[eventName].push(callback);
     }
-  };
-}
-  
+    return {
+      unsubscribe: () => {
+        const arr = this.events[eventName].filter((fn) => fn !== callback);
+        this.events[eventName] = arr;
+        return undefined;
+      },
+    };
+  }
+
   /**
    * @param {string} eventName
    * @param {Array} args
    * @return {Array}
    */
-emit(eventName, args = []) {
-  if (!this.events[eventName] || this.events[eventName].length === 0) {
-          return [];
-      }
+  emit(eventName, args = []) {
+    if (!this.events[eventName] || this.events[eventName].length === 0) {
+      return [];
+    }
 
-      const result = [];
-      const fns = this.events[eventName];
-      for (let i = 0; i < fns.length; i++) {
-          result.push(fns[i](...args));
+    const result = [];
+    const fns = this.events[eventName];
+    for (let i = 0; i < fns.length; i++) {
+      result.push(fns[i](...args));
+    }
 
-      }
-
-      return result;
-}
+    return result;
+  }
 }
 
 /**
-* const emitter = new EventEmitter();
-*
-* // Subscribe to the onClick event with onClickCallback
-* function onClickCallback() { return 99 }
-* const sub = emitter.subscribe('onClick', onClickCallback);
-*
-* emitter.emit('onClick'); // [99]
-* sub.unsubscribe(); // undefined
-* emitter.emit('onClick'); // []
-*/
+ * const emitter = new EventEmitter();
+ *
+ * // Subscribe to the onClick event with onClickCallback
+ * function onClickCallback() { return 99 }
+ * const sub = emitter.subscribe('onClick', onClickCallback);
+ *
+ * emitter.emit('onClick'); // [99]
+ * sub.unsubscribe(); // undefined
+ * emitter.emit('onClick'); // []
+ */

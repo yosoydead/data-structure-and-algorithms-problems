@@ -66,19 +66,21 @@ Acceptance Rate
  * @return {Array}
  */
 var flat = function (arr, n) {
-  if (n === 0) { return arr; }
+  if (n === 0) {
+    return arr;
+  }
   const result = [];
 
   const f = (a, depth) => {
-      for (let i = 0; i < a.length; i++) {
-          if (Array.isArray(a[i]) && depth > 0) {
-              const d = depth - 1;
-              f(a[i], d);
-          } else {
-              result.push(a[i]);
-          }
+    for (let i = 0; i < a.length; i++) {
+      if (Array.isArray(a[i]) && depth > 0) {
+        const d = depth - 1;
+        f(a[i], d);
+      } else {
+        result.push(a[i]);
       }
+    }
   };
-  f(arr,n)
+  f(arr, n);
   return result;
 };
