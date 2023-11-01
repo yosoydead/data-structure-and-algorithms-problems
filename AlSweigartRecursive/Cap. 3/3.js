@@ -4,7 +4,7 @@
  * un string gol sau un caracter e palindrom
  */
 function pal(str) {
-  if (str === '' || str.length === 1) {
+  if (str === "" || str.length === 1) {
     return true;
   }
 
@@ -15,7 +15,7 @@ function pal(str) {
   return head === tail && pal(mid);
 }
 
-console.log(pal('racecar')); // true
-console.log(pal('amanaplanacanalpanama')); // true
-console.log(pal('tacocat')); // true
-console.log(pal('zophie')); // false
+console.log(pal("racecar")); // true
+console.log(pal("amanaplanacanalpanama")); // true
+console.log(pal("tacocat")); // true
+console.log(pal("zophie")); // false

@@ -5,7 +5,7 @@
  */
 function sum(arr) {
   if (arr.length === 0) {
-    return 0
+    return 0;
   }
 
   const head = arr[0];
@@ -13,6 +13,6 @@ function sum(arr) {
   return head + sum(tail);
 }
 
-console.log(sum([1,2,3,4,5])); // 15
-console.log(sum([5,2,4,8])); // 19
-console.log(sum([1,10,100,1000])); // 1111
+console.log(sum([1, 2, 3, 4, 5])); // 15
+console.log(sum([5, 2, 4, 8])); // 19
+console.log(sum([1, 10, 100, 1000])); // 1111

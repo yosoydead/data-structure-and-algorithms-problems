@@ -15,7 +15,7 @@ function rev(str) {
   return rev(tail) + head;
 }
 
-console.log(rev('abcdef')); // fedcba
-console.log(rev('Hello, world!')); // !dlrow ,olleH
-console.log(rev('')); // 
-console.log(rev('x')); // x
+console.log(rev("abcdef")); // fedcba
+console.log(rev("Hello, world!")); // !dlrow ,olleH
+console.log(rev("")); //
+console.log(rev("x")); // x
