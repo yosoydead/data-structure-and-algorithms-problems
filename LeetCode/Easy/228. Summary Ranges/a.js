@@ -55,13 +55,13 @@ Acceptance Rate
 
 const returnInterval = (array, start) => {
   for (let i = start; i < array.length - 1; i++) {
-      if (array[i] + 1 !== array[i+1]) {
-          return i;
-      }
+    if (array[i] + 1 !== array[i + 1]) {
+      return i;
+    }
   }
   return array.length - 1;
-}
-var summaryRanges = function(nums) {
+};
+var summaryRanges = function (nums) {
   const results = [];
 
   let i = 0;

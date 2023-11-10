@@ -37,14 +37,14 @@ Acceptance Rate
  * @param {string} needle
  * @return {number}
  */
-var strStr = function(haystack, needle) {
+var strStr = function (haystack, needle) {
   let i = 0;
   while (i < haystack.length) {
-      if (haystack.substring(i, i + needle.length) === needle) {
+    if (haystack.substring(i, i + needle.length) === needle) {
       return i;
-      }
-      i += 1;
+    }
+    i += 1;
   }
 
   return -1;
-}
+};

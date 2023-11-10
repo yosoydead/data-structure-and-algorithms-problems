@@ -27,16 +27,16 @@
  */
 
 const towers = {
-  a: [1,2,3],
+  a: [1, 2, 3],
   b: [],
-  c: []
-}
+  c: [],
+};
 const move = (start, end) => {
   const d = towers[start].shift();
-  towers[end].unshift(d)
+  towers[end].unshift(d);
 };
 
-console.log(towers)
+console.log(towers);
 // function solve(n, start, end, temp) {
 //   if (n === 1) {
 //     move(start,end)
@@ -55,16 +55,16 @@ console.log(towers)
 
 function solve(n, start, temp, end) {
   if (n === 1) {
-    move(start,end)
-    console.log(towers)
+    move(start, end);
+    console.log(towers);
     return;
   } else {
-    solve(n-1, start, end, temp)
-    move(start,end)
+    solve(n - 1, start, end, temp);
+    move(start, end);
     console.log(towers);
-    solve(n-1, temp, start, end)
+    solve(n - 1, temp, start, end);
     return;
   }
 }
 
-solve(3, 'a', 'b', 'c');
+solve(3, "a", "b", "c");
