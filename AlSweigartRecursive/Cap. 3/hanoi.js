@@ -25,3 +25,46 @@
  *    to solve decreases by one disk for each recursive call until it is a one-disk
  *    tower
  */
+
+const towers = {
+  a: [1,2,3],
+  b: [],
+  c: []
+}
+const move = (start, end) => {
+  const d = towers[start].shift();
+  towers[end].unshift(d)
+};
+
+console.log(towers)
+// function solve(n, start, end, temp) {
+//   if (n === 1) {
+//     move(start,end)
+//   	console.log(towers)
+//     return;
+//   } else {
+//   	solve(n-1, start, temp, end)
+//     move(start,end)
+//     console.log(towers);
+//     solve(n-1, temp, end, start)
+//     return;
+//   }
+// }
+
+// solve(3, 'a', 'b', 'c');
+
+function solve(n, start, temp, end) {
+  if (n === 1) {
+    move(start,end)
+    console.log(towers)
+    return;
+  } else {
+    solve(n-1, start, end, temp)
+    move(start,end)
+    console.log(towers);
+    solve(n-1, temp, start, end)
+    return;
+  }
+}
+
+solve(3, 'a', 'b', 'c');
