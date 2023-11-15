@@ -4,7 +4,7 @@
 import childProcess from "child_process";
 import fs from "fs";
 
-const folders = ["HackerRank", "LeetCode", "TudorSorin", "CodeWars", "AlSweigartRecursive"];
+const folders = ["HackerRank", "LeetCode", "TudorSorin", "CodeWars", "AlSweigartRecursive", "RubioSanchez"];
 
 const generateExpression = (folderName) => {
   return `find ./${folderName} -mindepth 1 -type f -name "*.js" -printf x | wc -c`;
