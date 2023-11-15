@@ -15,10 +15,12 @@ function countOnes(n) {
     }
 
     const d = num % 2;
-    if (d === 1) { ones++; }
+    if (d === 1) {
+      ones++;
+    }
 
     fn(Math.floor(num / 2));
-  }
+  };
 
   fn(n);
 

@@ -16,7 +16,7 @@ function big(arr) {
   const a = big(arr.slice(0, mid));
   const b = big(arr.slice(mid));
 
-  return Math.max(a,b);
+  return Math.max(a, b);
 }
 
 console.log(big([5, -1, 20, 3, 2, 4, 7, 2]));

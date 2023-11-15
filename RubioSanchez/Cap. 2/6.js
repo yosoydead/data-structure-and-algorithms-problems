@@ -15,10 +15,10 @@ function big(arr) {
       biggest = a[i];
     }
 
-    fn(a, i+=1);
-  }
+    fn(a, (i += 1));
+  };
 
-  fn(arr, 0)
+  fn(arr, 0);
 
   return biggest;
 }
