@@ -43,15 +43,15 @@ Acceptance Rate
  * @param {number[]} nums
  * @return {number[]}
  */
-var decompressRLElist = function(nums) {
+var decompressRLElist = function (nums) {
   const res = [];
-  for (let i = 0; i < nums.length; i+=2) {
-      const freq = nums[i];
-      const val = nums[i+1];
+  for (let i = 0; i < nums.length; i += 2) {
+    const freq = nums[i];
+    const val = nums[i + 1];
 
-      for (j = 0; j < freq; j++) {
-          res.push(val);
-      }
+    for (j = 0; j < freq; j++) {
+      res.push(val);
+    }
   }
 
   return res;
