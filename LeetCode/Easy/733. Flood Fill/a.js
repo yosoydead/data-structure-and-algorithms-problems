@@ -43,3 +43,40 @@ Submissions
 Acceptance Rate
 63.2%
  */
+/**
+ * @param {number[][]} image
+ * @param {number} sr
+ * @param {number} sc
+ * @param {number} color
+ * @return {number[][]}
+ */
+var floodFill = function (image, sr, sc, color) {
+  const initial = image[sr][sc];
+  if (image[sr][sc] === color) {
+    return image;
+  }
+  const f = (x, y) => {
+    if (image[x][y] === initial) {
+      image[x][y] = color;
+
+      if (y + 1 < image[0].length) {
+        f(x, y + 1);
+      }
+
+      if (y - 1 >= 0) {
+        f(x, y - 1);
+      }
+
+      if (x + 1 < image.length) {
+        f(x + 1, y);
+      }
+
+      if (x - 1 >= 0) {
+        f(x - 1, y);
+      }
+    }
+  };
+
+  f(sr, sc);
+  return image;
+};
