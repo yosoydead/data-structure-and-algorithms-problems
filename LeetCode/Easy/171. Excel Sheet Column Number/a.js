@@ -48,20 +48,20 @@ Acceptance Rate
  * @param {string} columnTitle
  * @return {number}
  */
-var titleToNumber = function(columnTitle) {
+var titleToNumber = function (columnTitle) {
   const obj = {};
   for (let i = 1; i <= 26; i++) {
-      obj[String.fromCharCode(64+i)] = i;
+    obj[String.fromCharCode(64 + i)] = i;
   }
 
   const a = (str) => {
-      if (str.length === 1) {
-          return obj[str];
-      }
-      const res = a(str.substring(1));
-      const first = obj[str[0]];
-      return res + (first * Math.pow(26, str.length - 1));
-  }
+    if (str.length === 1) {
+      return obj[str];
+    }
+    const res = a(str.substring(1));
+    const first = obj[str[0]];
+    return res + first * Math.pow(26, str.length - 1);
+  };
 
   return a(columnTitle);
 };

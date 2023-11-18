@@ -53,30 +53,30 @@ operations[i] will be either "++X", "X++", "--X", or "X--".
  * @param {string[]} operations
  * @return {number}
  */
-var finalValueAfterOperations = function(operations) {
+var finalValueAfterOperations = function (operations) {
   let i = 0;
   let j = operations.length - 1;
 
   const obj = {
     "+": 0,
-    "-": 0
+    "-": 0,
   };
 
   let res = 0;
 
   while (i < j) {
-      // eval(operations[i]);
-      // eval(operations[j]);
-      if (operations[i] === "X++" || operations[i] === "++X") {
-          res++;
-      } else {
-          res--;
-      }
+    // eval(operations[i]);
+    // eval(operations[j]);
+    if (operations[i] === "X++" || operations[i] === "++X") {
+      res++;
+    } else {
+      res--;
+    }
     if (operations[j] === "X++" || operations[j] === "++X") {
-          res++;
-      } else {
-          res--;
-      }
+      res++;
+    } else {
+      res--;
+    }
 
     //   const len = operations[i].length - 1;
     //   obj[operations[i][0]]++
@@ -84,18 +84,18 @@ var finalValueAfterOperations = function(operations) {
 
     //   obj[operations[j][0]]++
     //   obj[operations[j][len]]++
-      i++;
-      j--;
+    i++;
+    j--;
   }
 
   if (i === j) {
     if (operations[i] === "X++" || operations[i] === "++X") {
-          res++;
-      } else {
-          res--;
-      }
+      res++;
+    } else {
+      res--;
+    }
   }
 
-    return res;
+  return res;
   return obj["+"] - obj["-"];
 };

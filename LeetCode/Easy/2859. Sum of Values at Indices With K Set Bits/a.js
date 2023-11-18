@@ -59,17 +59,21 @@ Acceptance Rate
 const bits = (n) => {
   let r = 0;
   while (n !== 0) {
-      if (n % 2 === 1) {r++;}
-      n = Math.floor(n / 2);
+    if (n % 2 === 1) {
+      r++;
+    }
+    n = Math.floor(n / 2);
   }
   return r;
-}
-var sumIndicesWithKSetBits = function(nums, k) {
+};
+var sumIndicesWithKSetBits = function (nums, k) {
   let r = 0;
   for (let i = 0; i < nums.length; i++) {
-      const res = bits(i);
+    const res = bits(i);
 
-      if (res === k) { r += nums[i]; }
+    if (res === k) {
+      r += nums[i];
+    }
   }
   return r;
 };

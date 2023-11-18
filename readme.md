@@ -1,5 +1,5 @@
 
-# **278 JS file count**
+# **281 JS file count**
 ---
 ### My name is **Bogdan** and I am trying to save all data structures and algorithms problems that i have been able to solve over the years or while I am learning new stuff.
 #### Problems will vary in difficulty and from where they are. Their parent folder will indicate the source.
@@ -11,7 +11,7 @@
 
 Current problems sources:
 1. HackerRank: 25
-2. LeetCode: 113
+2. LeetCode: 116
 3. TudorSorin: 45
 4. CodeWars: 79
 5. AlSweigartRecursive: 12
