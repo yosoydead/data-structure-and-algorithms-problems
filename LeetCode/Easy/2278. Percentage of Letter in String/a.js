@@ -39,13 +39,13 @@ Acceptance Rate
  * @param {character} letter
  * @return {number}
  */
-var percentageLetter = function(s, letter) {
+var percentageLetter = function (s, letter) {
   let count = 0;
 
   for (let i = 0; i < s.length; i++) {
-      if (s[i] === letter) {
-          count+=1;
-      }
+    if (s[i] === letter) {
+      count += 1;
+    }
   }
 
   return count === 0 ? 0 : Math.floor((count / s.length) * 100);

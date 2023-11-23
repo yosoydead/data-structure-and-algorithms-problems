@@ -1,4 +1,4 @@
-const nums = [1,2,3];
+const nums = [1, 2, 3];
 
 function permute(array) {
   const results = [];
@@ -11,11 +11,11 @@ function permute(array) {
 
     for (let i = 0; i < arr.length; i++) {
       tempList.push(arr[i]);
-      const slice = [...arr.slice(0, i), ...arr.slice(i+1)];
+      const slice = [...arr.slice(0, i), ...arr.slice(i + 1)];
       backtrack(results, tempList, slice);
       tempList.pop();
     }
-  }
+  };
 
   backtrack(results, [], array);
   return results;

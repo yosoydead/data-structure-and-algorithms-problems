@@ -45,24 +45,24 @@ Acceptance Rate
  * @param {string} s
  * @return {string}
  */
-var frequencySort = function(s) {
+var frequencySort = function (s) {
   const obj = {};
 
   for (let i = 0; i < s.length; i++) {
-      if (!obj[s[i]]) {
-          obj[s[i]] = 1;
-      } else {
-          obj[s[i]] += 1;
-      }
+    if (!obj[s[i]]) {
+      obj[s[i]] = 1;
+    } else {
+      obj[s[i]] += 1;
+    }
   }
 
   // console.log(obj)
-  const keys = Object.keys(obj).sort((a,b) => obj[b] - obj[a]);
+  const keys = Object.keys(obj).sort((a, b) => obj[b] - obj[a]);
   // console.log(keys);
   let result = "";
   for (let i = 0; i < keys.length; i++) {
-      const x = keys[i].repeat(obj[keys[i]]);
-      result += x;
+    const x = keys[i].repeat(obj[keys[i]]);
+    result += x;
   }
 
   return result;
